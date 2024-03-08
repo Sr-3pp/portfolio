@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  font-family: "REM";
+}
+
+body {
+  margin: 0;
+}
+
+small {
+  font-size: small;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.img {
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
