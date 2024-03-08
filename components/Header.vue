@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { y } = useWindowScroll();
 const route = useRoute();
 
 const emit = defineEmits(["resume", "toggleSize"]);
@@ -7,14 +6,6 @@ const scrolled = ref(false);
 
 const small = computed(() => {
   return route.name !== "index" ? true : scrolled.value;
-});
-
-watch(y, (e: number) => {
-  if (e > 1 && !scrolled.value) {
-    scrolled.value = true;
-  } else if (e == 0 && scrolled.value) {
-    scrolled.value = false;
-  }
 });
 </script>
 
@@ -48,10 +39,10 @@ watch(y, (e: number) => {
   overflow: hidden;
   position: relative;
   z-index: 3;
-  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: unit(40);
   background: linear-gradient(
     90deg,
     rgba($color-vue-bg, 1) 50%,
@@ -60,10 +51,24 @@ watch(y, (e: number) => {
   background-color: transparent;
   transition: height 0.35s ease;
 
+  height: 100svh;
+
+  @media (min-width: $breakpoint-sm) {
+    min-height: 100svh;
+    height: auto;
+    padding-top: 0;
+  }
+
   &.small {
     position: sticky;
     top: 0;
-    height: unit(100);
+    height: unit(150);
+    padding-bottom: unit(60);
+
+    @media (min-width: $breakpoint-sm) {
+      height: unit(100);
+      padding-bottom: unit(40);
+    }
 
     .info {
       .typewritter,
@@ -112,6 +117,31 @@ watch(y, (e: number) => {
 
     .action-box {
       flex-direction: row;
+      justify-content: space-around;
+      padding-left: unit(20);
+      padding-right: unit(20);
+
+      background-color: rgba($color-vue-active, 0.8);
+      position: fixed;
+      top: unit(100);
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      @media (min-width: $breakpoint-sm) {
+        max-width: unit(350);
+        background-color: transparent;
+        position: static;
+      }
+    }
+  }
+
+  .character {
+    max-width: unit(400);
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $breakpoint-sm) {
+      max-width: initial;
     }
   }
 
@@ -169,16 +199,21 @@ watch(y, (e: number) => {
   }
 
   .action-box {
-    max-width: unit(350);
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: stretch;
+    justify-content: center;
     gap: unit(20);
     .sr-link,
     .cta {
       max-width: inherit;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      flex-wrap: nowrap;
+      flex-direction: column;
     }
   }
 }

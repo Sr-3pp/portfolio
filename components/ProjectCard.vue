@@ -95,7 +95,7 @@ defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: unit(16);
+    font-size: unit(22);
     transition: opacity 0.35s ease;
 
     @media (min-width: $breakpoint-md) {

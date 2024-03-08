@@ -33,9 +33,11 @@ const getUrl = (key: string, value: string) => {
 <style lang="scss">
 .social-list {
   display: flex;
+  flex-wrap: wrap;
 
   &-item {
     display: flex;
+    padding: unit(5);
 
     &:not(:last-child) {
       margin-right: unit(20);
