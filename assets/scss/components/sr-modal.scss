@@ -1,16 +1,18 @@
-.sr-modal {
-  &-content {
-    border: unit(2) solid $color-vue;
-    color: $color-vue-text;
-    background: $bg-linear-vue-dark;
-    animation: glowEdge 1s infinite alternate;
+.main {
+  .sr-modal {
+    &-content {
+      border: unit(2) solid $color-vue;
+      color: $color-vue-text;
+      background: $bg-linear-vue-dark !important;
+      animation: glowEdge 1s infinite alternate;
 
-    @keyframes glowEdge {
-      0% {
-        box-shadow: 0px unit(5) unit(50) rgba($color-vue, 0.8);
-      }
-      100% {
-        box-shadow: 0px unit(10) unit(5) rgba($color-vue, 0.2);
+      @keyframes glowEdge {
+        0% {
+          box-shadow: 0px unit(5) unit(50) rgba($color-vue, 0.8);
+        }
+        100% {
+          box-shadow: 0px unit(10) unit(5) rgba($color-vue, 0.2);
+        }
       }
     }
   }
