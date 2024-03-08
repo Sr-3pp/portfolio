@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { cv } from "@/content/cv/index.json";
+import { social } from "@/content/about.json";
 const resumeSw = ref(false);
 
 const printResume = () => {
@@ -29,7 +30,7 @@ SrModal.resume.printable(:active="resumeSw" @close="resumeSw = false")
   template(#body)
     .sr-modal-body
       Resume(:cv="cv")
-Footer
+Footer(:socialItems="social")
 </template>
 
 <style lang="scss">
@@ -39,6 +40,9 @@ Footer
 }
 
 .resume {
+  &.sr-modal {
+    padding: unit(20);
+  }
   .sr-modal {
     &-header {
       margin-top: unit(20);
@@ -48,6 +52,9 @@ Footer
         width: unit(1);
         color: $color-vue-bg;
       }
+    }
+    &-body {
+      max-height: 60vh;
     }
     &-close {
       display: flex;

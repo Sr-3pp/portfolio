@@ -1,7 +1,9 @@
 <template lang="pug">
 .contact-form
   Transition(name="fade")
-    SrForm(v-if="!sent && !error" :fieldsets="contactForm" submit="Evniar" @submit="submitForm")
+    SrForm(v-if="!sent && !error" :fieldsets="contactForm" submit="hidden" @submit="submitForm")
+      template(#submit)
+        SrButton(label="Enviar")
     .success-message(v-else-if="sent")
       SrText(text="Your message has been sent successfully" tag="h3" class="subtitle" style="--text-align: center;")
     .error-message(v-else-if="error")
@@ -88,11 +90,16 @@ const submitForm = (data: { name: string; email: string; message: string }) => {
           box-shadow: 0 0 unit(30) rgba($color-vue, 0.5);
         }
 
-        &:focus {
+        &:focus,
+        &:active {
           border-color: $color-vue-active;
           box-shadow: 0 0 unit(30) rgba($color-vue-active, 0.5);
         }
       }
+    }
+
+    .cta {
+      margin: auto;
     }
   }
 }

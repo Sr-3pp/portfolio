@@ -30,7 +30,7 @@ const projectDetails = (project: any) => {
   section
     SrPicture.projects-bg(src="/img/stripes.jpg")
     SrContainer(:with-padding="true")
-      SrText(text="Freelance" tag="h2" class="title")
+      SrText(text="Freelance" tag="h2" class="title" style="--text-align: center; --text-align-sm: left;")
       SrGrid(tag="ul" class="projects-list" style="--justify-content: center;")
         SrGridColumn.projects-list-project(tag="li" :size="{mobile: '1', sm: '1/3'}" v-for="project in freelance" :key="project.name")
           button(@click="projectDetails(project)")
@@ -39,11 +39,13 @@ const projectDetails = (project: any) => {
     SrContainer(:with-padding="true")
       SrText(text="Contractors" tag="h2" class="title")
       SrGrid(tag="ul" class="projects-list" style="--justify-content: center;")
-        SrGridColumn.projects-list-project(tag="li" :size="{mobile: '1', sm: '1/4'}" v-for="project in contractors" :key="project.name")
+        SrGridColumn.projects-list-project(tag="li" :size="{mobile: '1/2', sm: '1/4'}" v-for="project in contractors" :key="project.name")
             SrButton.projects-list-contractor(@click="projectDetails(project)")
               SrPicture(:src="`/img/logos/${project.logo}`" :alt="project.name" width="200" height="200")
 
   SrModal.projects-project-detail(:active="modal_project" @close="modal_project = false")
+    template(#close)
+      SrIcon(name="close")
     template(#body)
       .sr-modal-body(v-if="currentProject")
         SrGrid
@@ -54,7 +56,7 @@ const projectDetails = (project: any) => {
             SrText(:text="$t(currentProject.description)")
             SrText(text="Built with" class="subtitle" style="--text-align: center;" tag="h3")
             SrGrid(tag="ul" style="--justify-content: center;")
-              SrGridColumn(:size="{mobile: '1', sm: '1/5'}" tag="li" v-for="(technology, index) in currentProject.technologies" :key="index")
+              SrGridColumn(:size="{mobile: '1/4', sm: '1/5'}" tag="li" v-for="(technology, index) in currentProject.technologies" :key="index")
                 SrPicture(:src="`/img/logos/${technology.logo}`" alt="technology.name" width="100" height="100")
 </template>
 
@@ -73,6 +75,12 @@ const projectDetails = (project: any) => {
 
     .sr-container {
       position: relative;
+
+      .sr-text {
+        &.title {
+          margin-bottom: unit(20);
+        }
+      }
     }
   }
 
@@ -85,6 +93,9 @@ const projectDetails = (project: any) => {
     width: 100%;
     height: 100%;
     z-index: 0;
+    img {
+      height: 100%;
+    }
   }
 
   &-list {

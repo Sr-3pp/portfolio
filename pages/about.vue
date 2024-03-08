@@ -6,10 +6,10 @@ const { hobbies } = about;
 <template lang="pug">
 .about 
   SrContainer(:with-padding="true")
-    SrText(text="Who am I?" tag="h2" class="title")
+    SrText(text="Who am I?" tag="h1" class="title" style="--text-align: center; --text-align-sm: left;")
     SrGrid
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}")
-        SrText(:html="$t('full_cover_letter')" alignment="center")
+        SrText(:html="$t('full_cover_letter')")
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}" style="--align-items: center; --justify-content: center;")
         SrPicture.selfie(src="/img/me.jpg" alt="Martin Ruiz" width="300" height="300")
   SrContainer(:with-padding="true")
@@ -18,7 +18,7 @@ const { hobbies } = about;
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}")
         SrPicture(src="/img/logos/vue.png" alt="Martin Ruiz" width="300" height="300")
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}" style="--align-items: center; --justify-content: center;")
-        SrText(:text="$t('why_vue_answer')" alignment="center")
+        SrText(:text="$t('why_vue_answer')")
   SrContainer(:with-padding="true")
     SrText(text="Hobbies" tag="h2" class="title")
     SrGrid(tag="ul" class="hobbies-list")
@@ -48,6 +48,18 @@ const { hobbies } = about;
       height: 100%;
       object-fit: cover;
       object-position: 50% 50%;
+    }
+  }
+
+  .sr-grid {
+    > * {
+      &:has(.selfie) {
+        display: none;
+
+        @media (min-width: $breakpoint-sm) {
+          display: flex;
+        }
+      }
     }
   }
 }

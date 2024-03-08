@@ -85,6 +85,12 @@ const sent = ref(false);
 
   .sr-grid {
     transition: all 0.5s ease;
+
+    flex-direction: column-reverse;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+    }
   }
 }
 </style>

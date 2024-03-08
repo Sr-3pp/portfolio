@@ -1,5 +1,15 @@
 .main {
   .sr-modal {
+    padding: unit(20);
+    &-close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .sr-icon {
+        width: unit(20);
+        height: unit(20);
+      }
+    }
     &-content {
       border: unit(2) solid $color-vue;
       color: $color-vue-text;

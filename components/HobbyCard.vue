@@ -40,7 +40,11 @@ defineProps({
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    --text-size: #{unit(28)};
+    --text-size: #{unit(22)};
+
+    @media (min-width: $breakpoint-sm) {
+      --text-size: #{unit(28)};
+    }
   }
 }
 </style>
