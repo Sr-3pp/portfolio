@@ -20,6 +20,6 @@
     "vue-i18n": "^9.2.2"
   },
   "dependencies": {
-    "sr-content-2": "^0.0.19"
+    "sr-content-2": "^0.0.20"
   }
 }

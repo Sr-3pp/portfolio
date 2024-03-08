@@ -17,11 +17,7 @@ Footer
 
 <style lang="scss">
 .main {
-  background: linear-gradient(
-    180deg,
-    rgba($color-vue-bg, 1) 0%,
-    rgba($color-vue-secondary, 1) 100%
-  );
+  background: $bg-linear-vue-dark;
   color: $color-vue-text;
 }
 </style>
