@@ -1,18 +1,24 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const sent = ref(false);
+</script>
 
 <template lang="pug">
 .contact
   SrContainer(:with-padding="true")
     SrText(text="Lets work together" tag="h1" class="title" style="--text-align: center;")
-    SrGrid
+    SrGrid(:style="`--justify-content: center;`")
       SrGridColumn(:size="{mobile: '1', sm: '1/2'}")
-        SrPicture.pixel(src="/img/pixel.png" alt="Pixel")
-      SrGridColumn(:size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
-        ContactForm
+        SrPicture.pixel(src="/img/pixel.png" :class="{sent: sent}" alt="Pixel")
+          Transition(name="fade")
+            SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
+      Transition(name="shrink")
+        SrGridColumn(v-if="!sent" :size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
+          ContactForm(@sent="sent = true")
 </template>
 
 <style lang="scss">
 .contact {
+  min-height: var(--section-min-height);
   .sr-text {
     &.title {
       margin-bottom: unit(30);
@@ -49,14 +55,36 @@
       }
     }
     img {
+      opacity: 1;
       position: relative;
       z-index: 1;
       mix-blend-mode: lighten;
+      transition: all 0.35s ease;
+      transition-delay: 0.5s;
+    }
+
+    &.sent {
+      img {
+        opacity: 0;
+      }
     }
   }
   &-form {
     max-width: unit(400);
     margin: auto;
+
+    &-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: unit(30);
+    }
+  }
+
+  .sr-grid {
+    transition: all 0.5s ease;
   }
 }
 </style>
