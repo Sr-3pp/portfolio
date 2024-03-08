@@ -63,4 +63,7 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
+  server: {
+    port: 3003,
+  },
 });

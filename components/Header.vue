@@ -54,8 +54,6 @@ const small = computed(() => {
   height: 100svh;
 
   @media (min-width: $breakpoint-sm) {
-    min-height: 100svh;
-    height: auto;
     padding-top: 0;
   }
 
