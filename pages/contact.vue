@@ -3,7 +3,7 @@
 <template lang="pug">
 .contact
   SrContainer(:with-padding="true")
-    SrText(text="Lets work together" tag="h1" style="--text-align: center;")
+    SrText(text="Lets work together" tag="h1" class="title" style="--text-align: center;")
     SrGrid
       SrGridColumn(:size="{mobile: '1', sm: '1/2'}")
         SrPicture.pixel(src="/img/pixel.png" alt="Pixel")
@@ -13,8 +13,10 @@
 
 <style lang="scss">
 .contact {
-  h1.sr-text {
-    margin-bottom: unit(60);
+  .sr-text {
+    &.title {
+      margin-bottom: unit(30);
+    }
   }
   .pixel.sr-picture {
     overflow: visible;
