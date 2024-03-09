@@ -60,10 +60,19 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      crawlLinks: true,
+      crawlLinks: false,
     },
-  },
-  server: {
-    port: 3003,
+    routeRules: {
+      "/img/**": {
+        headers: {
+          "cache-control": `public,max-age=31536000,s-maxage=31536000`,
+        },
+      },
+      "/_nuxt/**": {
+        headers: {
+          "cache-control": `public,max-age=31536000,s-maxage=31536000`,
+        },
+      },
+    },
   },
 });

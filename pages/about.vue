@@ -16,7 +16,7 @@ const { hobbies } = about;
     SrText(:text="$t('why_vue')" class="title" tag="h2" style="--text-align: center;")
     SrGrid.why
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}")
-        SrPicture(src="/img/logos/vue.png" alt="Martin Ruiz" width="300" height="300")
+        SrPicture(src="/img/logos/vue.webp" alt="Martin Ruiz" width="300" height="300")
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}" style="--align-items: center; --justify-content: center;")
         SrText(:text="$t('why_vue_answer')")
   SrContainer(:with-padding="true")
