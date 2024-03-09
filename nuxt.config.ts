@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import viteCompression from "vite-plugin-compression";
-
 const cachePolicy = "public,max-age=31536000,s-maxage=31536000";
 
 const mailConfig =
@@ -60,16 +58,6 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [
-      viteCompression({
-        verbose: true,
-        disable: false,
-        threshold: 10240,
-        algorithm: "gzip", // ['gzip'，' brotliccompress '，'deflate '，'deflateRaw']
-        ext: ".gz",
-        deleteOriginFile: false,
-      }),
-    ],
   },
   nitro: {
     compressPublicAssets: true,
@@ -78,6 +66,11 @@ export default defineNuxtConfig({
     },
     routeRules: {
       "/img/**": {
+        headers: {
+          "cache-control": cachePolicy,
+        },
+      },
+      "/gsap/**": {
         headers: {
           "cache-control": cachePolicy,
         },

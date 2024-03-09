@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "nuxt-mail": "^4.0.3",
-    "sr-content-2": "^0.0.20",
-    "vite-plugin-compression": "^0.5.1"
+    "sr-content-2": "^0.0.20"
   }
 }
