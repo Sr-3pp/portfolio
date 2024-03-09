@@ -51,7 +51,7 @@ const small = computed(() => {
   background-color: transparent;
   transition: height 0.35s ease;
 
-  height: 100svh;
+  height: 100lvh;
 
   @media (min-width: $breakpoint-sm) {
     padding-top: 0;

@@ -35,7 +35,6 @@ Footer(:socialItems="social")
 
 <style lang="scss">
 .main {
-  background: $bg-linear-vue-dark;
   color: $color-vue-text;
 }
 
