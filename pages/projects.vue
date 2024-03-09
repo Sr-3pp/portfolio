@@ -28,7 +28,7 @@ const projectDetails = (project: any) => {
 <template lang="pug">
 .projects
   section
-    SrPicture.projects-bg(src="/img/stripes.jpg")
+    SrPicture.projects-bg(src="/img/stripes.webp")
     SrContainer(:with-padding="true")
       SrText(text="Freelance" tag="h2" class="title" style="--text-align: center; --text-align-sm: left;")
       SrGrid(tag="ul" class="projects-list" style="--justify-content: center;")
@@ -102,10 +102,22 @@ const projectDetails = (project: any) => {
     &-project {
       padding: unit(40) unit(10);
       button {
+        display: flex;
+        width: 100%;
+        height: 100%;
         background: none;
         border: none;
         color: currentColor;
         cursor: pointer;
+
+        .project-card {
+          width: 100%;
+          height: 100%;
+
+          .sr-picture {
+            aspect-ratio: 16 / 9;
+          }
+        }
       }
     }
 

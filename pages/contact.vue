@@ -8,7 +8,7 @@ const sent = ref(false);
     SrText(text="Lets work together" tag="h1" class="title" style="--text-align: center;")
     SrGrid(:style="`--justify-content: center;`")
       SrGridColumn(:size="{mobile: '1', sm: '1/2'}")
-        SrPicture.pixel(src="/img/pixel.png" :class="{sent: sent}" alt="Pixel")
+        SrPicture.pixel(src="/img/pixel.webp" :class="{sent: sent}" alt="Pixel")
           Transition(name="fade")
             SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
       Transition(name="shrink")

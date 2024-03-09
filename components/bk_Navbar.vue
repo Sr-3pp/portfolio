@@ -5,7 +5,7 @@ header.navbar
             li.navbar-item
                 button(@click="() => modal_cv = true") {{ $t('resume') }}
             li.navbar-item.submenu
-                SrPicture.navbar-flag(:src="`/img/${$i18n.locale}.png`")
+                SrPicture.navbar-flag(:src="`/img/${$i18n.locale}.webp`")
                 ol.navbar-submenu
                     li.navbar-submenu-item
                         button(@click="$i18n.locale = 'es'") ES

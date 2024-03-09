@@ -10,7 +10,7 @@ defineProps({
 <template lang="pug">
 .character
   figure.character-picture(ref="character")
-    img(src="/img/3pp2.png" alt="character")
+    img(src="/img/3pp.webp" alt="character")
     SrText(text="Sr.3pp" style="--text-align: center;")
 </template>
 

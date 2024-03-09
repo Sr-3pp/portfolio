@@ -13,10 +13,10 @@ const small = computed(() => {
 .header(:class="{small: small}")
     SrContainer(:with-padding="true")
         SrGrid
-            SrGridColumn(:size="{mobile: '1', sm: '1/2'}" class="items-center justify-center")
+            SrGridColumn(:size="{mobile: '1', sm: '2/5', md: '1/2'}" class="items-center justify-center")
               NuxtLink(to="/" style="width: 100%")
                 Character(:small=" small")
-            SrGridColumn(:size="{mobile: '1', sm: '1/2'}" class="column justify-center info")
+            SrGridColumn(:size="{mobile: '1', sm: '3/5',md: '1/2'}" class="column justify-center info")
                 Typewriter(text="Martin Ruiz" class="title")
                 SrText(:text="$t('vue_expert')" class="subtitle" style="--text-align: center;")
                 ul.action-box
@@ -65,7 +65,7 @@ const small = computed(() => {
 
     @media (min-width: $breakpoint-sm) {
       height: unit(100);
-      padding-bottom: unit(40);
+      padding-bottom: 0;
     }
 
     .info {
@@ -93,6 +93,13 @@ const small = computed(() => {
     .character {
       &-picture {
         --image-position: 50% #{unit(110)};
+
+        @media (min-width: $breakpoint-sm) {
+          --image-position: 50% #{unit(50)};
+        }
+        @media (min-width: $breakpoint-md) {
+          --image-position: 50% #{unit(110)};
+        }
         &::before {
           animation: none;
           outline-offset: 0;
@@ -129,7 +136,8 @@ const small = computed(() => {
       z-index: 2;
       @media (min-width: $breakpoint-sm) {
         flex-wrap: wrap;
-        max-width: unit(350);
+        max-width: initial;
+        width: 100%;
         background-color: transparent;
         position: static;
       }
