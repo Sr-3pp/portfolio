@@ -1,5 +1,8 @@
 <script setup lang="ts">
 useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
   title: "Sr.3pp | Welcome",
   meta: [
     {

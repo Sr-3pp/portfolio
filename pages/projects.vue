@@ -4,6 +4,9 @@ const modal_project = ref(false);
 const currentProject = ref(null);
 
 useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
   title: "Sr.3pp | Portfolio",
   meta: [
     {

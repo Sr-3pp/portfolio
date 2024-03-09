@@ -3,6 +3,9 @@ import about from "@/content/about.json";
 const { hobbies } = about;
 
 useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
   title: "Sr.3pp | About me",
   meta: [
     {

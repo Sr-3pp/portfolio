@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   modules: [
     "sr-content-2",
     "@vueuse/nuxt",
+    "@nuxtjs/robots",
     [
       "nuxt-mail",
       {

@@ -29,6 +29,7 @@ footer.footer
     a {
       color: $color-white;
       text-decoration: none;
+      padding: unit(20) unit(10);
       &:hover {
         text-decoration: underline;
       }

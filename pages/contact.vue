@@ -2,6 +2,9 @@
 const sent = ref(false);
 
 useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
   title: "Sr.3pp | Contact me",
   meta: [
     {
