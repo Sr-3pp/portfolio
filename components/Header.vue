@@ -123,9 +123,12 @@ const small = computed(() => {
       position: fixed;
       top: unit(100);
       left: 0;
-      width: 100%;
+      width: 100vw;
+      overflow-x: auto;
+      flex-wrap: nowrap;
       z-index: 2;
       @media (min-width: $breakpoint-sm) {
+        flex-wrap: wrap;
         max-width: unit(350);
         background-color: transparent;
         position: static;
