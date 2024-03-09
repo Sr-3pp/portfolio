@@ -1,6 +1,5 @@
 <template lang="pug">
 .contact-form
-  Transition(name="fade")
     SrForm(v-if="!sent && !error" :fieldsets="contactForm" submit="hidden" @submit="submitForm")
       template(#submit)
         SrButton(label="Enviar")

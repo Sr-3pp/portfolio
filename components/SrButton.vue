@@ -12,11 +12,15 @@ defineProps({
     type: String,
     default: "",
   },
+  ariaLabel: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
 <template lang="pug">
-button.cta
+button.cta(:aria-label="ariaLabel | label")
     SrIcon.cta-icon(:name="icon" v-if="icon")
     span.cta-label {{ label }}
     slot

@@ -76,6 +76,11 @@ export default defineNuxtConfig({
           "cache-control": cachePolicy,
         },
       },
+      "/portfolio/**": {
+        headers: {
+          "cache-control": cachePolicy,
+        },
+      },
       "/_nuxt/**": {
         headers: {
           "cache-control": cachePolicy,

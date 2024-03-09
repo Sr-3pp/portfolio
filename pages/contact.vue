@@ -27,19 +27,29 @@ useHead({
             SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
       Transition(name="shrink")
         SrGridColumn(v-if="!sent" :size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
-          ContactForm(@sent="sent = true")
+          ClientOnly
+            ContactForm(@sent="sent = true")
 </template>
 
 <style lang="scss">
 .contact {
-  min-height: var(--section-min-height);
+  display: flex;
+  min-height: var(--section-min-height, 80vh);
   .sr-text {
     &.title {
       margin-bottom: unit(30);
     }
   }
+
+  .sr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .pixel.sr-picture {
     overflow: visible;
+    margin: auto;
 
     &::before {
       content: "";

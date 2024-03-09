@@ -3,15 +3,29 @@ import { cv } from "@/content/cv/index.json";
 import { social } from "@/content/about.json";
 const resumeSw = ref(false);
 
+const nuxtApp = useNuxtApp();
+const loading = ref(false);
+nuxtApp.hook("page:start", () => {
+  loading.value = true;
+  console.log("loading");
+});
+nuxtApp.hook("page:finish", () => {
+  loading.value = false;
+  console.log("finished");
+});
+
 const printResume = () => {
   window.print();
 };
 </script>
 
 <template lang="pug">
+
 Header(@resume="resumeSw = true")
-.main 
-  NuxtPage
+Transition(name="fade")
+  Loader(v-if="loading")
+  .main(v-else)
+    NuxtPage
 
 SrModal.resume.printable(:active="resumeSw" @close="resumeSw = false")
   template(#close)
