@@ -1,6 +1,17 @@
 <script lang="ts" setup>
 import about from "@/content/about.json";
 const { hobbies } = about;
+
+useHead({
+  title: "Sr.3pp | About me",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Learn more about me, my hobbies and why I love Vue.js.",
+    },
+  ],
+});
 </script>
 
 <template lang="pug">

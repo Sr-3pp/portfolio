@@ -3,6 +3,17 @@ import { cv } from "@/content/cv/index.json";
 const modal_project = ref(false);
 const currentProject = ref(null);
 
+useHead({
+  title: "Sr.3pp | Portfolio",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Checkout all my freelance projects and contractors here.",
+    },
+  ],
+});
+
 const getNameLabel = (cv: any) => `${cv.name} <small>${cv.birth}</small>`;
 const freelanceProjects = [
   "All American Finishing",
