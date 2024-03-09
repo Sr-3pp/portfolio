@@ -1,5 +1,16 @@
 <script lang="ts" setup>
 const sent = ref(false);
+
+useHead({
+  title: "Sr.3pp | Contact me",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Lets work together, contact me here.",
+    },
+  ],
+});
 </script>
 
 <template lang="pug">
