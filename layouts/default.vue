@@ -41,6 +41,19 @@ Footer(:socialItems="social")
 .resume {
   &.sr-modal {
     padding: unit(20);
+
+    .sr-text {
+      &.title {
+        .sr-text-container {
+          font-size: unit(22) !important;
+        }
+      }
+      &.subtitle {
+        .sr-text-container {
+          font-size: unit(18) !important;
+        }
+      }
+    }
   }
   .sr-modal {
     &-header {
@@ -51,17 +64,29 @@ Footer(:socialItems="social")
         width: unit(1);
         color: $color-vue-bg;
       }
+
+      .sr-icon {
+        width: unit(14);
+        height: unit(14);
+
+        @media (min-width: $breakpoint-sm) {
+          width: unit(20);
+          height: unit(20);
+        }
+      }
     }
     &-body {
-      max-height: 60vh;
+      max-height: 60lvh;
     }
     &-close {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
       .sr-icon {
         width: unit(20);
         height: unit(20);
+        flex-shrink: 0;
       }
     }
   }
