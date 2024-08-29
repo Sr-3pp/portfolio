@@ -31,6 +31,8 @@ export default defineNuxtConfig({
       {
         message: {
           to: process.env.MAIL_CONTACT,
+          cc: process.env.MAIL_CONTACT,
+          bcc: process.env.MAIL_CONTACT,
         },
         smtp: mailConfig,
       },
