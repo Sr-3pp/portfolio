@@ -22,6 +22,11 @@ const mailConfig =
 export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
+  runtimeConfig: {
+    mailConfig: {
+      to: process.env.MAIL_CONTACT,
+    },
+  },
   modules: [
     "sr-content-2",
     "@vueuse/nuxt",
@@ -31,8 +36,6 @@ export default defineNuxtConfig({
       {
         message: {
           to: process.env.MAIL_CONTACT,
-          cc: process.env.MAIL_CONTACT,
-          bcc: process.env.MAIL_CONTACT,
         },
         smtp: mailConfig,
       },

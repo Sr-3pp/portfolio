@@ -49,10 +49,12 @@ const contactForm = ref([
 ]);
 
 const emit = defineEmits(["sent"]);
+const { mailConfig } = useRuntimeConfig();
 
 const submitForm = (data: { name: string; email: string; message: string }) => {
   try {
     mail.send({
+      to: (mailConfig as any).to,
       from: "Sr3pp Contact Form",
       subject: "sr3pp.dev Contact Form",
       text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`,
