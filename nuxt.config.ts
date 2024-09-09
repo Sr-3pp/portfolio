@@ -65,9 +65,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  generate: {
-    fallback: true,
-  },
   nitro: {
     compressPublicAssets: true,
     prerender: {

@@ -1,0 +1,326 @@
+{
+  "cv": {
+    "name": "Jose Martin Ruiz Rico",
+    "birth": "30-07-1992",
+    "position": "developer",
+    "social": {
+      "linkedin": "sr3pp",
+      "facebook": "",
+      "x": "",
+      "email": "martin.ru@outlook.com",
+      "web": "sr3pp.dev"
+    },
+    "education": [
+      {
+        "school": "UVM",
+        "degree": "Graphic Design",
+        "period": "01-01-2010, 01-01-2014"
+      },
+      {
+        "school": "Autodidact",
+        "degree": "Software developing",
+        "period": "01-01-2014, present"
+      }
+    ],
+    "experience": [
+      {
+        "name": "Kokoro",
+        "logo": "kokoro.webp",
+        "position": "cv.kokoro.position",
+        "period": "01-01-2014, 01-01-2015",
+        "description": "cv.kokoro.description",
+        "technologies": [
+          {
+            "name": "Photoshop",
+            "logo": "photoshop.svg"
+          },
+          {
+            "name": "Ilustrator",
+            "logo": "ilustrator.webp"
+          },
+          {
+            "name": "InDesign",
+            "logo": "indesign.webp"
+          },
+          {
+            "name": "Maya",
+            "logo": "maya.webp"
+          }
+        ]
+      },
+      {
+        "name": "Kaloni",
+        "logo": "kaloni.webp",
+        "position": "cv.kaloni.position",
+        "period": "01-01-2015, 01-01-2016",
+        "description": "cv.kaloni.description",
+        "technologies": [
+          {
+            "name": "Adobe Muse",
+            "logo": "muse.svg"
+          },
+          {
+            "name": "HTML5",
+            "logo": "html5.webp"
+          },
+          {
+            "name": "CSS",
+            "logo": "css3.svg"
+          }
+        ]
+      },
+      {
+        "name": "Queremos comer",
+        "logo": "qc.webp",
+        "position": "cv.qc.position",
+        "period": "01-01-2016, 01-01-2017",
+        "description": "cv.qc.description",
+        "technologies": [
+          {
+            "name": "HTML5",
+            "logo": "html5.webp"
+          },
+          {
+            "name": "CSS",
+            "logo": "css3.svg"
+          },
+          {
+            "name": "JavaScript",
+            "logo": "js.webp"
+          }
+        ]
+      },
+      {
+        "name": "Pengo",
+        "logo": "pengo.webp",
+        "position": "cv.pengo.position",
+        "period": "01-01-2017, 31-12-2018",
+        "description": "cv.pengo.description",
+        "technologies": [
+          {
+            "name": "HTML5",
+            "logo": "html5.webp"
+          },
+          {
+            "name": "CSS",
+            "logo": "css3.svg"
+          },
+          {
+            "name": "JavaScript",
+            "logo": "js.webp"
+          },
+          {
+            "name": "Magento",
+            "logo": "magento.svg"
+          },
+          {
+            "name": "PHP",
+            "logo": "php.webp"
+          }
+        ]
+      },
+      {
+        "name": "Banamex",
+        "logo": "banamex.webp",
+        "position": "cv.bnmx.position",
+        "period": "01-07-2018, present",
+        "description": "cv.bnmx.description",
+        "technologies": [
+          {
+            "name": "HTML5",
+            "logo": "html5.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          },
+          {
+            "name": "JavaScript",
+            "logo": "js.webp"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          }
+        ]
+      },
+      {
+        "name": "Charter solutions",
+        "logo": "charter-solutions.webp",
+        "position": "cv.charter.position",
+        "period": "01-06-2022, 01-01-2023",
+        "description": "cv.charter.description",
+        "technologies": [
+          {
+            "name": "React JS",
+            "logo": "react.svg"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          },
+          {
+            "name": "JavaScript",
+            "logo": "js.webp"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          },
+          {
+            "name": "Node JS",
+            "logo": "nodejs.webp"
+          },
+          {
+            "name": "Graph QL",
+            "logo": "graphql.svg"
+          }
+        ]
+      },
+      {
+        "name": "Cars.com",
+        "logo": "cars.com.webp",
+        "position": "cv.cars.position",
+        "period": "01-01-2023, 29-02-2024",
+        "description": "cv.cars.description",
+        "technologies": [
+          {
+            "name": "HTML5",
+            "logo": "html5.webp"
+          },
+          {
+            "name": "CSS",
+            "logo": "css3.svg"
+          },
+          {
+            "name": "Node JS",
+            "logo": "nodejs.webp"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          },
+          {
+            "name": "Web Components / Custom Elements",
+            "logo": "webcomponents.webp"
+          },
+          {
+            "name": "PHP",
+            "logo": "php.webp"
+          }
+        ]
+      }
+    ],
+    "freelance": [
+      {
+        "name": "ICCN",
+        "thumb": "/portfolio/members.webp",
+        "position": "cv.members.position",
+        "description": "cv.members.description",
+        "link": "https://members.internationalccn.org",
+        "technologies": [
+          {
+            "name": "Laravel",
+            "logo": "laravel.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          },
+          {
+            "name": "Vue",
+            "logo": "vue.webp"
+          }
+        ]
+      },
+      {
+        "name": "All American Finishing",
+        "thumb": "/portfolio/AAF.webp",
+        "position": "cv.aaf.position",
+        "description": "cv.aaf.description",
+        "link": "https://allamericanfinishing.com",
+        "technologies": [
+          {
+            "name": "Laravel",
+            "logo": "laravel.webp"
+          },
+          {
+            "name": "Vue",
+            "logo": "vue.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          }
+        ]
+      },
+      {
+        "name": "All American Cabinetery",
+        "thumb": "/portfolio/AAC.webp",
+        "position": "cv.aac.position",
+        "description": "cv.aac.description",
+        "link": "https://allamericancabinetery.com",
+        "technologies": [
+          {
+            "name": "Nuxt 2",
+            "logo": "nuxt.svg"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          }
+        ]
+      },
+      {
+        "name": "Quivi",
+        "thumb": "/portfolio/quivi.webp",
+        "position": "cv.quivi.position",
+        "description": "cv.quivi.description",
+        "link": "https://quivi.com",
+        "technologies": [
+          {
+            "name": "Nuxt 2",
+            "logo": "nuxt.svg"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          },
+          {
+            "name": "Pyhton",
+            "logo": "python.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          }
+        ]
+      },
+      {
+        "name": "Birdsual",
+        "thumb": "/portfolio/birdsual.webp",
+        "position": "cv.birdsual.position",
+        "description": "cv.birdsual.description",
+        "link": "https://birdsualdesign.com",
+        "technologies": [
+          {
+            "name": "Nuxt 3",
+            "logo": "nuxt.svg"
+          },
+          {
+            "name": "TypeScript",
+            "logo": "typescript.webp"
+          },
+          {
+            "name": "SASS",
+            "logo": "sass.webp"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,8 +4,6 @@
 .nitro
 .cache
 dist
-content
-locales
 public
 
 # Node dependencies

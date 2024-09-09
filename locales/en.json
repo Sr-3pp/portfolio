@@ -1,0 +1,72 @@
+{
+  "hello": "Hellow, {name}",
+  "language": "Language",
+  "portafolio": "Portfolio",
+  "developer": "FullStack Developer focused on Frontend",
+  "vue_expert": "Vue Expert",
+  "resume": "Resume",
+  "resume_cta": "Show Resume",
+  "full_cover_letter": "My name is <strong>Martin Ruiz</strong>, I graduated as a <strong>Graphic Designer</strong>. After one year working as it, I decided to look for earning more money so I got into <strong>web development</strong>.\n\nI started using Adobe Muse (Another Drag and Drop tool for creating websites, currently it does not exist anymore) because <strong>I was afraid</strong> of the screen full of letters and weird symbols. Until I <strong>faced</strong> a requirement that was not posible to do with Adobe Muse... \n\nThat was a <strong>canoninc event in my carrer</strong> as a web developer, I had to stay at the office till the next morning trying to figure out how could I achieve that requirement (I could not). After that day <strong>I decided to submerge</strong> into that screen full of weird characters. \nI started to learn HTML, CSS and JavaScript and I loved it so <strong>I went deeper</strong> and now I know the whole proccess for build a website and publish it into production. I had to learn VPS managment, SSH connections, CD/CI. \n\nI have been <strong>working as a web developer</strong> for 7 years, and I have been <strong>working with Vue</strong> for more than 5 years, Vue is my favorite Javascript framework and I love to power Vue with the versality of <strong>Nuxt</strong>.",
+  "why_vue": "Why Vue?",
+  "why_vue_answer": "Vue was the first framework I learned, and I loved it. \n\nI have been working with it for more than 5 years, and I have been able to create amazing projects with it. \n\nI have also worked with React and Angular, but I feel more comfortable with Vue.",
+  "hobbies": {
+    "programming": "Programming",
+    "skateboarding": "Skateboarding",
+    "rubik_cube": "Rubik's Cube",
+    "juggling": "Juggling"
+  },
+  "cv": {
+    "kokoro": {
+      "description": " I created visual materials for marketing purposes, such as flyers, posters, and social media graphics. I worked closely with marketing teams to ensure my designs align with the brand and messaging strategy, requiring both technical skills and marketing knowledge.",
+      "position": "Graphic Designer"
+    },
+    "kaloni": {
+      "description": "As a Webmaster Jr., I was in charge of the maintenance and management of websites, as well as updating content among other tasks.",
+      "position": "Webmaster JR"
+    },
+    "qc": {
+      "description": "As a webmaster, I was responsible for maintaining and updating websites. I handled technical aspects such as ensuring the website was functioning properly, troubleshooting issues, and implementing security measures to protect against cyber threats. Additionally, I oversaw the website's content, ensuring it was up-to-date, relevant, and visually appealing. I utilized analytics to track website traffic and user behavior, and implemented strategies to enhance website performance and user experience. Overall, my role was crucial in ensuring the website ran smoothly and met the needs of its users.",
+      "position": "Webmaster"
+    },
+    "pengo": {
+      "description": "I create and maintain eCommerce websites using Magento. I develop custom modules and themes, optimize website performance. To succeed, I need to be skilled in PHP, HTML, CSS, JavaScript, and MySQL, and stay up-to-date with eCommerce trends.",
+      "position": "Developer"
+    },
+    "bnmx": {
+      "description": "As a Banamex frontend developer, I am responsible for designing and developing the visual and interaction part of the bank's websites. I work collaboratively with the team's designers and developers to create intuitive and appealing user experiences, and ensure web accessibility and site performance optimization. Among the activities I can perform are programming in languages such as HTML, CSS and JavaScript, developing performance and functionality tests, and staying up-to-date with emerging frontend trends and technologies.",
+      "position": "Frontend Developer"
+    },
+    "charter": {
+      "description": "As a frontend developer at Charter Solutions, I was responsible for creating visually appealing and intuitive interfaces for Prism application and website. I used React, HTML, CSS, and JavaScript to customize website themes, ensure optimal performance, and implement quality assurance measures. Additionally, I stayed up-to-date with the latest web design trends and technology developments to continuously improve my skills.",
+      "position": "Frontend Developer"
+    },
+    "cars": {
+      "description": "As a frontend developer at cars.com, my activities include creating and maintaining web components to enhance the user interface using PHP, and optimizing website performance using Lit, a web components library. I also ensure that the website is visually appealing and user-friendly for customers. Additionally, I collaborate with the engineering team to implement quality assurance measures and maintain the website's codebase to ensure its scalability and maintainability.",
+      "position": "Frontend Developer"
+    },
+    "aaf": {
+      "description": "Explore metal joining and finishing processes on our website. Learn about metallurgy and bonding, cutting, and forming metal, along with techniques for finishing and coating metals for various applications. Stay updated on industry news, products, and trends, and connect with professionals and enthusiasts in the field.",
+      "position": "FullStack Developer"
+    },
+    "birdsual": {
+      "description": "This graphic designer's web portfolio was created with Nuxt 3 and Mongo. It offers an attractive and easy-to-use visualization of the best portfolio pieces, as well as an intuitive user experience for visitors. In addition, this platform also features a solid and secure backend for optimal performance and easy maintenance.",
+      "position": "FullStack Developer"
+    },
+    "aac": {
+      "description": "A website using Nuxt 2 and Mongo to create sustainable, contemporary interior and exterior furniture. Discover artistically designed pieces that integrate perfectly into your living spaces. Browse our gallery and place an online order for stylish furniture built to last.",
+      "position": "FullStack Developer"
+    },
+    "quivi": {
+      "description": "This e-commerce platform for a Mexican autoparts store was created with Django Rest and Nuxt 2, providing a user-friendly interface for customers to purchase high-quality autoparts from top brands with secure payment options and efficient order processing.",
+      "position": "FullStack Developer"
+    },
+    "members": {
+      "description": "This integrated CRUD system, built with Laravel, Vue, and MySQL, facilitates coaches with easy data management and secure data storage. The intuitive interface allows for real-time updates for personalized client support.",
+      "position": "FullStack Developer"
+    },
+    "mayeling": {
+      "description": "Discover our construction enterprise in Mexico through our Laravel, Vue, and MySQL-powered website. Check out our portfolio and reliable building solutions. Easy-to-use navigation lets you learn more about our team and experience the quality of our work.",
+      "position": "FullStack Developer"
+    }
+  }
+}
