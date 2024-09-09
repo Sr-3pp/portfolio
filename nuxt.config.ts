@@ -20,7 +20,7 @@ const mailConfig =
       };
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   devtools: { enabled: true },
   runtimeConfig: {
     mailConfig: {
@@ -68,7 +68,8 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     prerender: {
-      crawlLinks: false,
+      crawlLinks: true,
+      routes: ["/"],
     },
     routeRules: {
       "/img/**": {
