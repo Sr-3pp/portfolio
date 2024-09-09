@@ -41,7 +41,6 @@ SrModal.resume.printable(:active="resumeSw" @close="resumeSw = false")
         small {{ cv.birth }} 
       div.cv-subtitle-container
         SrText(:text="$t(cv.position)")
-        SocialList(:items="cv.social")
   template(#body)
     .sr-modal-body
       Resume(:cv="cv")

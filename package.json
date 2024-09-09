@@ -4,7 +4,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "start": "PORT=3003 nuxt start",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -23,6 +23,7 @@
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
     "@vercel/speed-insights": "^1.0.12",
+    "gsap": "^3.12.5",
     "nuxt-mail": "^4.0.3",
     "sr-content-2": "^0.0.20"
   }

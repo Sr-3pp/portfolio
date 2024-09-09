@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gsap from "https://cdn.skypack.dev/pin/gsap@v3.12.5-e7MYMpWLLt7gPZ9TaN3p/mode=imports,min/optimized/gsap.js";
+import gsap from "gsap";
 const canvasRef: any = ref(null);
 const contextRef: any = ref(null);
 const starsRef: any = ref([]);
