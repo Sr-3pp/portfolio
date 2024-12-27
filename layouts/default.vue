@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+import { Analytics } from '@vercel/analytics/nuxt'
 import { cv } from "@/content/cv/index.json";
 import { social } from "@/content/about.json";
 const resumeSw = ref(false);
@@ -22,6 +23,7 @@ const printResume = () => {
 
 <template lang="pug">
 SpeedInsights
+Analytics
 Header(@resume="resumeSw = true")
 Transition(name="fade")
   Loader(v-if="loading")
