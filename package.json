@@ -11,20 +11,20 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.4.1",
-    "@types/node": "^18.17.0",
-    "@vueuse/core": "^10.2.1",
-    "@vueuse/nuxt": "^10.2.1",
+    "@types/node": "^22.10.2",
+    "@vueuse/core": "^12.2.0",
+    "@vueuse/nuxt": "^12.2.0",
     "nuxt": "^3.6.5",
     "pug": "^3.0.2",
     "sass": "^1.64.1",
-    "sass-loader": "^13.3.2",
-    "vue-i18n": "^9.2.2"
+    "sass-loader": "^16.0.4",
+    "vue-i18n": "^11.0.1"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0",
+    "@nuxtjs/robots": "^5.1.0",
     "@vercel/speed-insights": "^1.0.12",
     "gsap": "^3.12.5",
-    "nuxt-mail": "^4.0.3",
-    "sr-content-2": "^0.0.20"
+    "nuxt-mail": "^5.1.1",
+    "sr-content-2": "^0.0.36"
   }
 }

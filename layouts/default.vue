@@ -41,6 +41,12 @@ SrModal.resume.printable(:active="resumeSw" @close="resumeSw = false")
         small {{ cv.birth }} 
       div.cv-subtitle-container
         SrText(:text="$t(cv.position)")
+        a.social-container(:href="'mailto:' + cv.social.mail")
+          SrIcon(name="email")
+          SrText(:text="cv.social.email")
+        a.social-container(:href="cv.social.web")
+          SrIcon(name="web")
+          SrText(:text="cv.social.web")
   template(#body)
     .sr-modal-body
       Resume(:cv="cv")
@@ -87,6 +93,12 @@ Footer(:socialItems="social")
           width: unit(20);
           height: unit(20);
         }
+      }
+      .social-container{
+        display: flex;
+        align-items: center;
+        gap: unit(10);
+        font-size: unit(12);
       }
     }
     &-body {

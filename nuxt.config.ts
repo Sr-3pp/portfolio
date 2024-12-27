@@ -20,13 +20,18 @@ const mailConfig =
       };
 
 export default defineNuxtConfig({
-  ssr: false,
   devtools: { enabled: true },
+
   runtimeConfig: {
     mailConfig: {
       to: process.env.MAIL_CONTACT,
     },
   },
+
+  generate: {
+    routes: ["/"],
+  },
+
   modules: [
     "sr-content-2",
     "@vueuse/nuxt",
@@ -41,30 +46,34 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
   css: [
-    "@/assets/scss/fonts/index.scss",
-    "@/assets/scss/main.scss",
-    "@/assets/scss/components/index.scss",
+    "~/assets/scss/main.scss",
+    "~/assets/scss/components/sr-modal.scss",
+    "~/assets/scss/components/sr-text.scss",
   ],
+
   components: {
     global: true,
     dirs: ["~/components"],
   },
+
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
           additionalData: `
-            @import "sr-content-2/assets/scss/utilities/index.scss";
-            @import "sr-content-2/assets/scss/main.scss";
-            @import "~/assets/scss/functions/index.scss";
-            @import "~/assets/scss/transitions.scss";
-            @import "~/assets/scss/tokens.scss";
+            @use "sr-content-2/assets/scss/utilities/index.scss" as *;
+            @use "sr-content-2/assets/scss/main.scss" as *;
+            @use "~/assets/scss/functions/unit.scss" as *;
+            @use "~/assets/scss/tokens.scss" as *;
+            @use "~/assets/scss/transitions.scss" as *;
           `,
         },
       },
     },
   },
+
   nitro: {
     compressPublicAssets: true,
     prerender: {
@@ -98,4 +107,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2024-12-26",
 });
