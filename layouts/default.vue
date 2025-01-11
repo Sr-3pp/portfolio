@@ -3,17 +3,15 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 import { Analytics } from '@vercel/analytics/nuxt'
 import { cv } from "@/content/cv/index.json";
 import { social } from "@/content/about.json";
-const resumeSw = ref(false);
+const resumeModal = ref();
 
 const nuxtApp = useNuxtApp();
 const loading = ref(false);
 nuxtApp.hook("page:start", () => {
   loading.value = true;
-  console.log("loading");
 });
 nuxtApp.hook("page:finish", () => {
   loading.value = false;
-  console.log("finished");
 });
 
 const printResume = () => {
@@ -24,13 +22,13 @@ const printResume = () => {
 <template lang="pug">
 SpeedInsights
 Analytics
-Header(@resume="resumeSw = true")
+Header(@resume="resumeModal.toggle()")
 Transition(name="fade")
   Loader(v-if="loading")
   .main(v-else)
     NuxtPage
 
-SrModal.resume.printable(:active="resumeSw" @close="resumeSw = false")
+SrModal.resume.printable(ref="resumeModal")
   template(#close)
     SrIcon(name="close")
   template(#header)

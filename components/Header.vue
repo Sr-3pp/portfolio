@@ -18,7 +18,10 @@ const small = computed(() => {
                 Character(:small=" small")
             SrGridColumn(:size="{mobile: '1', sm: '3/5',md: '1/2'}" class="column justify-center info")
                 Typewriter(text="Martin Ruiz" class="title")
-                SrText(:text="$t('vue_expert')" class="subtitle" style="--text-align: center;")
+                div.highlights
+                  SrText(:text="`💻 ${$t('vue_expert')}`" class="subtitle" style="--text-align: center;")
+                  SrText(text="|" class="subtitle" style="--text-align: center;")
+                  SrText(:text="`🐞 ${$t('bug_hunter')}`" class="subtitle" style="--text-align: center;")
                 ul.action-box
                   li
                     SrLink(icon="vue" label="View Certificate" href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")
@@ -70,7 +73,7 @@ const small = computed(() => {
 
     .info {
       .typewritter,
-      > .sr-text {
+      .highlights {
         display: none;
       }
 
@@ -224,6 +227,14 @@ const small = computed(() => {
       flex-wrap: nowrap;
       flex-direction: column;
     }
+  }
+
+  .highlights {
+    display: flex;
+    gap: unit(20);
+    justify-content: center;
+    margin-top: unit(10);
+    margin-bottom: unit(10);
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { cv } from "@/content/cv/index.json";
-const modal_project = ref(false);
+const projectModal = ref();
 const currentProject = ref(null);
 
 useHead({
@@ -35,7 +35,7 @@ const contractors = cv.experience;
 
 const projectDetails = (project: any) => {
   currentProject.value = project;
-  modal_project.value = true;
+  projectModal.value.toggle();
 };
 </script>
 
@@ -57,7 +57,7 @@ const projectDetails = (project: any) => {
             SrButton.projects-list-contractor(@click="projectDetails(project)")
               SrPicture(:src="`/img/logos/${project.logo}`" :alt="project.name" width="200" height="200")
 
-  SrModal.projects-project-detail(:active="modal_project" @close="modal_project = false")
+  SrModal.projects-project-detail(ref="projectModal")
     template(#close)
       SrIcon(name="close")
     template(#body)
