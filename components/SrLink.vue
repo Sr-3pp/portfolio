@@ -4,6 +4,10 @@ defineProps({
     type: String,
     default: "",
   },
+  ariaLabel: {
+    type: String,
+    default: "",
+  },
   icon: {
     type: String,
     default: "",
@@ -20,7 +24,7 @@ defineProps({
 </script>
 
 <template lang="pug">
-NuxtLink.sr-link(:to="href" :target="target")
+NuxtLink.sr-link(:to="href" :target="target" :aria-label="ariaLabel | label")
     SrIcon.sr-link-icon(:name="icon" v-if="icon")
     span.sr-link-label {{ label }}
     slot

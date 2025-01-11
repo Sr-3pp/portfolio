@@ -50,8 +50,8 @@ defineProps({
   .sr-picture {
     width: 100%;
     height: 100%;
-    opacity: 0.3;
     border-radius: unit(9999);
+    background-color: $color-vue-bg;
     border: {
       style: solid;
       width: unit(5);
@@ -65,6 +65,7 @@ defineProps({
     img {
       filter: blur(unit(1));
       height: 100%;
+      opacity: 0.3;
       object-fit: contain;
       transition: filter 0.35s ease;
     }
@@ -73,8 +74,8 @@ defineProps({
   &:hover {
     transform: scale(1.05);
     .sr-picture {
-      opacity: 1;
       img {
+        opacity: 1;
         filter: blur(0);
       }
     }
@@ -85,7 +86,7 @@ defineProps({
 
   &-name {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -94,7 +95,12 @@ defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: unit(22);
     transition: opacity 0.35s ease;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: unit(24);
+    }
   }
 
   &-content {

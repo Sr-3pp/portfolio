@@ -1,26 +1,40 @@
 <script lang="ts" setup>
 import about from "@/content/about.json";
 const { hobbies } = about;
+
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+  title: "Sr.3pp | About me",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Learn more about me, my hobbies and why I love Vue.js.",
+    },
+  ],
+});
 </script>
 
 <template lang="pug">
 .about 
   SrContainer(:with-padding="true")
-    SrText(text="Who am I?" tag="h1")
+    SrText(text="Who am I?" tag="h1" class="title" style="--text-align: center; --text-align-sm: left;")
     SrGrid
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}")
-        SrText(:html="$t('full_cover_letter')" alignment="center")
+        SrText(:html="$t('full_cover_letter')")
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}" style="--align-items: center; --justify-content: center;")
-        SrPicture.selfie(src="/img/me.jpg" alt="Martin Ruiz" width="300" height="300")
+        SrPicture.selfie(src="/img/me.webp" alt="Martin Ruiz" width="300" height="300")
   SrContainer(:with-padding="true")
-    SrText(:text="$t('why_vue')" tag="h1" style="--text-align: center;")
+    SrText(:text="$t('why_vue')" class="title" tag="h2" style="--text-align: center;")
     SrGrid.why
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}")
-        SrPicture(src="/img/logos/vue.png" alt="Martin Ruiz" width="300" height="300")
+        SrPicture(src="/img/logos/vue.webp" alt="Martin Ruiz" width="300" height="300")
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}" style="--align-items: center; --justify-content: center;")
-        SrText(:text="$t('why_vue_answer')" alignment="center")
+        SrText(:text="$t('why_vue_answer')")
   SrContainer(:with-padding="true")
-    SrText(text="Hobbies" tag="h1")
+    SrText(text="Hobbies" tag="h2" class="title")
     SrGrid(tag="ul" class="hobbies-list")
       SrGridColumn.hobbies-list-hobby(tag="li" :size="{mobile: '1/2', sm: '1/4'}" v-for="hobby in hobbies" :key="hobby")
         HobbyCard(v-bind="hobby")
@@ -29,8 +43,8 @@ const { hobbies } = about;
 <style lang="scss">
 .about {
   .sr-text {
-    &:not(h1) {
-      font-size: unit(18);
+    &.title {
+      margin-bottom: unit(20);
     }
   }
 
@@ -48,6 +62,18 @@ const { hobbies } = about;
       height: 100%;
       object-fit: cover;
       object-position: 50% 50%;
+    }
+  }
+
+  .sr-grid {
+    > * {
+      &:has(.selfie) {
+        display: none;
+
+        @media (min-width: $breakpoint-sm) {
+          display: flex;
+        }
+      }
     }
   }
 }

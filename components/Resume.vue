@@ -84,7 +84,7 @@ const props = defineProps({
 
   &-tech-list {
     .sr-picture {
-      width: unit(60);
+      width: unit(60)!important;
     }
   }
 

@@ -15,3 +15,15 @@ $color-vue-bg: #2c2d3a;
 $color-vue-text: #f0f1e4;
 $color-vue-hover: #6bd2d4;
 $color-vue-active: #43b2af;
+
+$bg-linear-vue-dark: linear-gradient(
+  180deg,
+  $color-vue-secondary 0%,
+  $color-vue-bg 100%
+);
+
+$bg-linear-vue-light: linear-gradient(
+  180deg,
+  $color-vue-text 0%,
+  $color-vue-active 100%
+);

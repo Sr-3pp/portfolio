@@ -60,4 +60,7 @@ pnpm run preview
 yarn preview
 ```
 
+## Generate Tokens
+npm run tokenize
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

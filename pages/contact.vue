@@ -1,23 +1,55 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const sent = ref(false);
+
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+  title: "Sr.3pp | Contact me",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "Lets work together, contact me here.",
+    },
+  ],
+});
+</script>
 
 <template lang="pug">
 .contact
   SrContainer(:with-padding="true")
-    SrText(text="Lets work together" tag="h1" style="--text-align: center;")
-    SrGrid
+    SrText(text="Lets work together" tag="h1" class="title" style="--text-align: center;")
+    SrGrid(:style="`--justify-content: center;`")
       SrGridColumn(:size="{mobile: '1', sm: '1/2'}")
-        SrPicture.pixel(src="/img/pixel.png" alt="Pixel")
-      SrGridColumn(:size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
-        ContactForm
+        SrPicture.pixel(src="/img/pixel.webp" :class="{sent: sent}" alt="Pixel")
+          Transition(name="fade")
+            SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
+      Transition(name="shrink")
+        SrGridColumn(v-if="!sent" :size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
+          ClientOnly
+            ContactForm(@sent="sent = true")
 </template>
 
 <style lang="scss">
 .contact {
-  h1.sr-text {
-    margin-bottom: unit(60);
+  display: flex;
+  min-height: var(--section-min-height, 80vh);
+  .sr-text {
+    &.title {
+      margin-bottom: unit(30);
+    }
   }
+
+  .sr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .pixel.sr-picture {
     overflow: visible;
+    margin: auto;
 
     &::before {
       content: "";
@@ -47,14 +79,42 @@
       }
     }
     img {
+      opacity: 1;
       position: relative;
       z-index: 1;
       mix-blend-mode: lighten;
+      transition: all 0.35s ease;
+      transition-delay: 0.5s;
+    }
+
+    &.sent {
+      img {
+        opacity: 0;
+      }
     }
   }
   &-form {
     max-width: unit(400);
     margin: auto;
+
+    &-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: unit(30);
+    }
+  }
+
+  .sr-grid {
+    transition: all 0.5s ease;
+
+    flex-direction: column-reverse;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+    }
   }
 }
 </style>

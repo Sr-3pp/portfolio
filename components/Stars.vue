@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gsap from "https://cdn.skypack.dev/gsap";
+import gsap from "gsap";
 const canvasRef: any = ref(null);
 const contextRef: any = ref(null);
 const starsRef: any = ref([]);
@@ -101,11 +101,12 @@ const UPDATE = ({ x, y }: any) => {
   z-index: -1;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   inset: 0;
   canvas {
     background: $color-vue-bg;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     opacity: 0.5;
   }
 }

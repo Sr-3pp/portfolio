@@ -1,11 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+  title: "Sr.3pp | Welcome",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Welcome to my profesional portfolio, you can find my resume, projects and contact information here.",
+    },
+  ],
+});
+</script>
 
 <template lang="pug">
 .content
-    SrContainer(:with-padding="true")
-        SrText(text="CodePens" tag="h1")
-    SrContainer(:with-padding="true" style="min-height: 100vh;")
-        SrText(text="Social List" tag="h1")
 </template>
 
 <style lang="scss">

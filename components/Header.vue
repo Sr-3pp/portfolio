@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { y } = useWindowScroll();
 const route = useRoute();
 
 const emit = defineEmits(["resume", "toggleSize"]);
@@ -8,26 +7,21 @@ const scrolled = ref(false);
 const small = computed(() => {
   return route.name !== "index" ? true : scrolled.value;
 });
-
-watch(y, (e: number) => {
-  if (e > 1 && !scrolled.value) {
-    scrolled.value = true;
-  } else if (e == 0 && scrolled.value) {
-    scrolled.value = false;
-  }
-});
 </script>
 
 <template lang="pug">
 .header(:class="{small: small}")
     SrContainer(:with-padding="true")
         SrGrid
-            SrGridColumn(:size="{mobile: '1', sm: '1/2'}" class="items-center justify-center")
+            SrGridColumn(:size="{mobile: '1', sm: '2/5', md: '1/2'}" class="items-center justify-center")
               NuxtLink(to="/" style="width: 100%")
                 Character(:small=" small")
-            SrGridColumn(:size="{mobile: '1', sm: '1/2'}" class="column justify-center info")
+            SrGridColumn(:size="{mobile: '1', sm: '3/5',md: '1/2'}" class="column justify-center info")
                 Typewriter(text="Martin Ruiz" class="title")
-                SrText(:text="$t('vue_expert')" class="subtitle" style="--text-align: center;")
+                div.highlights
+                  SrText(:text="`💻 ${$t('vue_expert')}`" class="subtitle" style="--text-align: center;")
+                  SrText(text="|" class="subtitle" style="--text-align: center;")
+                  SrText(:text="`🐞 ${$t('bug_hunter')}`" class="subtitle" style="--text-align: center;")
                 ul.action-box
                   li
                     SrLink(icon="vue" label="View Certificate" href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")
@@ -48,10 +42,10 @@ watch(y, (e: number) => {
   overflow: hidden;
   position: relative;
   z-index: 3;
-  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: unit(40);
   background: linear-gradient(
     90deg,
     rgba($color-vue-bg, 1) 50%,
@@ -60,14 +54,26 @@ watch(y, (e: number) => {
   background-color: transparent;
   transition: height 0.35s ease;
 
+  height: 100lvh;
+
+  @media (min-width: $breakpoint-sm) {
+    padding-top: 0;
+  }
+
   &.small {
     position: sticky;
     top: 0;
-    height: unit(100);
+    height: unit(150);
+    padding-bottom: unit(60);
+
+    @media (min-width: $breakpoint-sm) {
+      height: unit(100);
+      padding-bottom: 0;
+    }
 
     .info {
       .typewritter,
-      > .sr-text {
+      .highlights {
         display: none;
       }
 
@@ -90,6 +96,13 @@ watch(y, (e: number) => {
     .character {
       &-picture {
         --image-position: 50% #{unit(110)};
+
+        @media (min-width: $breakpoint-sm) {
+          --image-position: 50% #{unit(50)};
+        }
+        @media (min-width: $breakpoint-md) {
+          --image-position: 50% #{unit(110)};
+        }
         &::before {
           animation: none;
           outline-offset: 0;
@@ -112,6 +125,35 @@ watch(y, (e: number) => {
 
     .action-box {
       flex-direction: row;
+      justify-content: space-around;
+      padding-left: unit(20);
+      padding-right: unit(20);
+
+      background-color: rgba($color-vue-active, 0.8);
+      position: fixed;
+      top: unit(100);
+      left: 0;
+      width: 100vw;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      z-index: 2;
+      @media (min-width: $breakpoint-sm) {
+        flex-wrap: wrap;
+        max-width: initial;
+        width: 100%;
+        background-color: transparent;
+        position: static;
+      }
+    }
+  }
+
+  .character {
+    max-width: unit(400);
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: $breakpoint-sm) {
+      max-width: initial;
     }
   }
 
@@ -169,17 +211,30 @@ watch(y, (e: number) => {
   }
 
   .action-box {
-    max-width: unit(350);
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: stretch;
+    justify-content: center;
     gap: unit(20);
     .sr-link,
     .cta {
       max-width: inherit;
     }
+
+    @media (min-width: $breakpoint-sm) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+
+  .highlights {
+    display: flex;
+    gap: unit(20);
+    justify-content: center;
+    margin-top: unit(10);
+    margin-bottom: unit(10);
   }
 }
 </style>
