@@ -75,11 +75,11 @@ ol {
     max-width: inherit;
     overflow: auto;
 
-    all: unset; /* Reset all inherited/default styles */
-    position: static !important; /* Force the desired position */
+    all: unset;
+    position: static !important;
     
     &[open] {
-      all: unset; /* Also reset styles for the open state */
+      all: unset;
       position: static !important;
     }
 
