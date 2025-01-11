@@ -32,24 +32,22 @@ SrModal.resume.printable(ref="resumeModal")
   template(#close)
     SrIcon(name="close")
   template(#header)
-    .sr-modal-header
-      ClientOnly
-        button.print-button(@click="printResume()")
-          SrIcon(name="print")
-      .cv-label
-        SrText(:text="cv.name" class="title")
-        small {{ cv.birth }} 
-      div.cv-subtitle-container
-        SrText(:text="$t(cv.position)")
-        a.social-container(:href="'mailto:' + cv.social.mail")
-          SrIcon(name="email")
-          SrText(:text="cv.social.email")
-        a.social-container(:href="cv.social.web")
-          SrIcon(name="web")
-          SrText(:text="cv.social.web")
+    ClientOnly
+      button.print-button(@click="printResume()")
+        SrIcon(name="print")
+    .cv-label
+      SrText(:text="cv.name" class="title")
+      small {{ cv.birth }} 
+    div.cv-subtitle-container
+      SrText(:text="$t(cv.position)")
+      a.social-container(:href="'mailto:' + cv.social.mail")
+        SrIcon(name="email")
+        SrText(:text="cv.social.email")
+      a.social-container(:href="cv.social.web")
+        SrIcon(name="web")
+        SrText(:text="cv.social.web")
   template(#body)
-    .sr-modal-body
-      Resume(:cv="cv")
+    Resume(:cv="cv")
 Footer(:socialItems="social")
 </template>
 
