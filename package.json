@@ -18,14 +18,14 @@
     "pug": "^3.0.2",
     "sass": "^1.64.1",
     "sass-loader": "^16.0.4",
-    "vue-i18n": "^11.0.1"
+    "vue-i18n": "^11.0.1",
+    "sr-content-2": "^0.0.36"
   },
   "dependencies": {
     "@nuxtjs/robots": "^5.1.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.0.12",
     "gsap": "^3.12.5",
-    "nuxt-mail": "^5.1.1",
-    "sr-content-2": "^0.0.36"
+    "nuxt-mail": "^5.1.1"
   }
 }
