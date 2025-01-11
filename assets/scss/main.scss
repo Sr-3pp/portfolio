@@ -55,17 +55,37 @@ ol {
 }
 
 @media print {
-  #__nuxt * {
+  body{
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+  #__nuxt > *:not(.printable) {
     display: none;
   }
 
-  #__nuxt .printable,
-  #__nuxt .printable * {
-    display: block;
-  }
-
   #__nuxt .resume {
+    display: block;
+    align-items: flex-start;
     position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+    max-height: inherit;
+    max-width: inherit;
+    overflow: auto;
+
+    all: unset; /* Reset all inherited/default styles */
+    position: static !important; /* Force the desired position */
+    
+    &[open] {
+      all: unset; /* Also reset styles for the open state */
+      position: static !important;
+    }
+
+    .print-button {
+      display: none;
+    }
 
     .sr-text {
       &.title {
@@ -81,6 +101,9 @@ ol {
     }
 
     .sr-modal {
+      &-container {
+        padding: 0;
+      }
       &-body {
         max-height: inherit;
         overflow: visible;
@@ -88,24 +111,22 @@ ol {
 
       &-content {
         box-shadow: none;
+        min-width: inherit;
       }
 
       &-backdrop,
-      &-close-button,
-      .print-button {
+      &-close{
         display: none;
       }
     }
 
     .social-list {
       display: flex;
+      width: 100%;
 
       &-item {
         display: flex;
-
-        &:not(:last-child) {
-          margin-right: unit(20);
-        }
+        gap: unit(8);
 
         .sr-icon {
           width: unit(25);
