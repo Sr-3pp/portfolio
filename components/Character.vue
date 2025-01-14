@@ -10,7 +10,7 @@ defineProps({
 <template lang="pug">
 .character
   figure.character-picture(ref="character")
-    img(src="/img/3pp.webp" width="100%" height="auto" alt="character")
+    NuxtImg(src="/img/3pp.webp" width="100%" height="auto" alt="character")
     SrText(text="Sr.3pp" style="--text-align: center;")
 </template>
 
@@ -105,7 +105,7 @@ defineProps({
       transition: object-position 0.35s ease;
     }
 
-    .sr-text {
+    .text {
       opacity: 0.8;
       mix-blend-mode: hue;
       position: absolute;

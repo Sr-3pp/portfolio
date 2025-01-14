@@ -1,6 +1,6 @@
 <template lang="pug">
 .contact-form
-    SrForm(v-if="!sent && !error" :fieldsets="contactForm" submit="hidden" @submit="submitForm")
+    SrForm.sr-form(v-if="!sent && !error" :form="contactForm" submit="Enviar" @submit="submitForm")
       template(#submit)
         SrButton(label="Enviar")
     .success-message(v-else-if="sent")
@@ -49,7 +49,6 @@ const contactForm = ref([
 ]);
 
 const emit = defineEmits(["sent"]);
-const { mailConfig } = useRuntimeConfig();
 
 const submitForm = (data: { name: string; email: string; message: string }) => {
   try {
@@ -68,17 +67,18 @@ const submitForm = (data: { name: string; email: string; message: string }) => {
 
 <style lang="scss">
 .contact-form {
-  .sr-form {
+  .form {
     color: $color-vue-text;
 
     fieldset {
       padding: unit(20);
       border-color: $color-vue;
       border-width: unit(2);
+      border-radius: unit(16);
       box-shadow: 0 0 unit(30) rgba($color-vue, 0.2);
     }
 
-    &-input {
+    .input {
       input,
       textarea {
         color: $color-vue-text;

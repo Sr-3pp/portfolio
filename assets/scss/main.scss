@@ -87,14 +87,14 @@ ol {
       display: none;
     }
 
-    .sr-text {
+    .text {
       &.title {
-        .sr-text-container {
+        .text-container {
           font-size: unit(22) !important;
         }
       }
       &.subtitle {
-        .sr-text-container {
+        .text-container {
           font-size: unit(18) !important;
         }
       }
@@ -148,7 +148,7 @@ ol {
       &-label {
         display: flex;
 
-        .sr-picture {
+        img{
           width: unit(30);
         }
       }

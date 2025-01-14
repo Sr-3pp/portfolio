@@ -1,32 +1,34 @@
 <script setup lang="ts">
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 import { Analytics } from '@vercel/analytics/nuxt'
-import { cv } from "@/content/cv/index.json";
-import { social } from "@/content/about.json";
 const resumeModal = ref();
 
-const nuxtApp = useNuxtApp();
-const loading = ref(false);
-nuxtApp.hook("page:start", () => {
-  loading.value = true;
-});
-nuxtApp.hook("page:finish", () => {
-  loading.value = false;
-});
+const { data } = await useAsyncData('home',() => {
+  const cv = queryContent('_cv').findOne();
+  const about = queryContent('about').findOne();
+
+  return Promise.all([cv, about]);
+})
+
+const [cv, about]: any = data.value;
+
+const { social } = about;
 
 const printResume = () => {
   window.print();
 };
+
+provide('cv', cv);
+provide('about', about)
+
 </script>
 
 <template lang="pug">
 SpeedInsights
 Analytics
 Header(@resume="resumeModal.toggle()")
-Transition(name="fade")
-  Loader(v-if="loading")
-  .main(v-else)
-    NuxtPage
+.main()
+  NuxtPage
 
 SrModal.resume.printable(ref="resumeModal")
   template(#close)
@@ -60,14 +62,14 @@ Footer(:socialItems="social")
   &.sr-modal {
     padding: unit(20);
 
-    .sr-text {
+    .text {
       &.title {
-        .sr-text-container {
+        .text-container {
           font-size: unit(22) !important;
         }
       }
       &.subtitle {
-        .sr-text-container {
+        .text-container {
           font-size: unit(18) !important;
         }
       }

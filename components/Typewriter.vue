@@ -39,6 +39,7 @@ watch(is_visible, (sw) => {
   display: flex;
   align-items: center;
   position: relative;
+  text-align: center;
 
   &::after {
     content: attr(data-label);
@@ -51,9 +52,6 @@ watch(is_visible, (sw) => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  .sr-text {
     width: 100%;
   }
 }

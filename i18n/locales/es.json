@@ -3,11 +3,11 @@
   "language": "Idioma",
   "portafolio": "Portafolio",
   "developer": "Desarrollador FullStack enfocado en Frontend",
-  "vue_expert": "Experto en Vue",
-  "bug_hunter": "Cazador de bugs",
+  "vue_expert": "💻 Experto en Vue",
+  "bug_hunter": "🐞 Cazador de bugs",
   "resume": "CV",
   "resume_cta": "Mostrar CV",
-  "full_cover_letter": "Mi nombre es <strong>Martin Ruiz</strong>, me gradué como <strong>Diseñador Gráfico</strong>. Después de un año trabajando en eso, decidí buscar ganar más dinero, así que comencé a trabajar en <strong>desarrollo web</strong>. \n\nEmpecé a usar Adobe Muse (otra herramienta de arrastrar y soltar para crear sitios web, que actualmente ya no existe) porque <strong>tenía miedo</strong> de la pantalla llena de letras y símbolos extraños. Hasta que me <strong>enfrenté</strong> a un requerimiento que no era posible hacer con Adobe Muse... \n\nEse fue un <strong>momento crucial en mi carrera</strong> como desarrollador web, tuve que quedarme en la oficina hasta la mañana siguiente tratando de descubrir cómo podía lograrlo (que no pude hacerlo). Después de ese día, <strong>decidí sumergirme</strong> en esa pantalla llena de caracteres extraños. \nComencé a aprender HTML, CSS y JavaScript y me encantó, así que <strong>profundicé</strong> y ahora conozco todo el proceso para construir un sitio web y publicarlo en producción. Tuve que aprender sobre la gestión de VPS, conexiones SSH, CD/CI. \n\nLlevo <strong>trabajando como desarrollador web</strong> durante 7 años, y he estado <strong>trabajando con Vue</strong> durante más de 5 años, Vue es mi framework de JavaScript favorito y me encanta potenciar Vue con la versatilidad de <strong>Nuxt</strong>.",
+  "full_cover_letter": "Mi nombre es Martín Ruiz, y soy egresado de la carrera de Diseño Gráfico. Sin embargo, tomé un camino poco convencional pero muy enriquecedor hacia el desarrollo web. Después de un año trabajando como diseñador gráfico, decidí explorar una carrera que no solo me ofreciera un crecimiento económico, sino también un nuevo desafío técnico. Así fue como encontré el desarrollo web, comenzando con Adobe Muse, una herramienta de arrastrar y soltar para crear sitios web (ya descontinuada). Al principio, me intimidaba la pantalla llena de líneas de código, pero un punto de inflexión cambió mi perspectiva por completo.\n\nMe enfrenté a un proyecto con un requerimiento que Adobe Muse no podía manejar. Determinado a encontrar una solución, pasé toda la noche en la oficina intentando resolverlo. Aunque no lo logré en esa ocasión, esa experiencia me inspiró a sumergirme de lleno en el mundo del desarrollo web. Comencé a aprender HTML, CSS y JavaScript, y rápidamente me enamoré de las posibilidades creativas y técnicas que el código ofrecía. Con el tiempo, amplié mis conocimientos hasta dominar todo el proceso de construcción y despliegue de sitios web, incluyendo la gestión de VPS, conexiones SSH y pipelines de CI/CD.\n\nActualmente, tengo siete años de experiencia como desarrollador web y más de cinco años trabajando con Vue.js, mi framework de JavaScript favorito. Disfruto especialmente aprovechar la flexibilidad de Nuxt para crear aplicaciones escalables y de alto rendimiento.\n\nAdemás de mis conocimientos técnicos, he desarrollado una habilidad especial para identificar y resolver problemas. Aunque no sea la parte más glamorosa del trabajo, me he convertido en un cazador de bugs eficiente, una habilidad que requiere persistencia, atención al detalle y capacidad para pensar críticamente bajo presión. No es algo de lo que me sienta orgulloso, pero reconozco su importancia y me considero muy bueno en ello.\n\nMe apasiona escribir código limpio y mantenible, así como crear experiencias de usuario impecables. Sería un honor aportar mis habilidades y entusiasmo a [Nombre de la Empresa], contribuyendo a proyectos innovadores y continuando mi desarrollo como profesional.",
   "why_vue": "Por qué Vue?",
   "why_vue_answer": "Vue fue el primer framework que aprendí, y me encantó. \n\nHe estado trabajando con él durante más de 5 años y he podido crear proyectos increíbles con él. \n\nTambién he trabajado con React y Angular, pero me siento más cómodo con Vue.",
   "hobbies": {
@@ -19,55 +19,73 @@
   "cv": {
     "kokoro": {
       "description": "Como diseñador de publicidad, hacia materiales visuales con fines de marketing, como volantes, carteles y gráficos en redes sociales. Trabajé en estrecha colaboración con los equipos de marketing para garantizar que mis diseños se ajusten a la marca y a la estrategia de mensajería, lo que requiere tanto habilidades técnicas como conocimientos de marketing.",
+      "showcase": "Trabajé como diseñador gráfico, creando publicidad para revistas, stands de exhibición y animaciones 3D.",
       "position": "Disenador Grafico"
     },
     "kaloni": {
       "description": "Como Webmaster Jr., me encargaba del mantenimiento y la gestión de sitios web, así como de actualizar contenidos, entre otras tareas.",
+      "showcase": "Realicé pequeñas actualizaciones en sitios web y desarrollé plantillas de correos electrónicos utilizando Adobe Muse, junto con algo de CSS y HTML.",
       "position": "Webmaster JR"
     },
     "qc": {
       "description": "Como webmaster, era responsable de mantener y actualizar sitios web. Me encargaba de aspectos técnicos como asegurar que el sitio web funcionara correctamente, solucionar problemas e implementar medidas de seguridad para proteger contra amenazas cibernéticas. Además, supervisaba el contenido del sitio web, asegurándome de que estuviera actualizado, relevante y visualmente atractivo. Utilizaba análisis para rastrear el tráfico en el sitio web y el comportamiento del usuario, e implementaba estrategias para mejorar el rendimiento y la experiencia del usuario en el sitio web. En general, mi papel fue crucial para garantizar que el sitio web funcionara sin problemas y cumplía con las necesidades de sus usuarios.",
+      "showcase": "Encargado del mantenimiento de sitios web de restaurantes, gestionando actualizaciones de contenido y código con un backend en PHP y un frontend desarrollado con Sass, JavaScript y HTML.",
       "position": "Webmaster"
     },
     "pengo": {
       "description": "creaba y mantenía sitios web de eCommerce utilizando Magento. Desarrollo módulos y temas personalizados, optimizo el rendimiento del sitio web. Para tener éxito, necesito tener habilidades en PHP, HTML, CSS, JavaScript y MySQL, y mantenerme actualizado con las tendencias de eCommerce.",
+      "showcase": "Mantuve plataformas de comercio electrónico basadas en Magento, gestionando tanto el backend como el frontend.",
       "position": "Desarrollador"
     },
     "bnmx": {
       "description": "Como maquetador de Banamex soy responsable de diseñar y desarrollar la parte visual y de interacción de los sitios web del banco. Trabajo en colaboración con los diseñadores y desarrolladores del equipo para crear experiencias de usuario intuitivas y atractivas, y garantizar la accesibilidad web y la optimización del rendimiento del sitio. Entre las actividades que realizo se encuentran programar en lenguajes como HTML, CSS y JavaScript, desarrollar pruebas de rendimiento y funcionalidad, y mantenerse al día con las tendencias y tecnologías emergentes de frontend.",
+      "showcase": "Líder de equipo responsable de desarrollar el sistema de componentes frontend desde cero utilizando Web Components y TypeScript, sin bibliotecas externas.",
       "position": "Maquetador"
     },
     "charter": {
       "description": "Como desarrollador frontend en Charter Solutions, fui responsable de crear interfaces visualmente atractivas e intuitivas para la aplicación y sitio web de Prism. Usé React, HTML, CSS y JavaScript para personalizar los temas del sitio web, garantizar un rendimiento óptimo e implementar medidas de aseguramiento de calidad. Además, me mantuve actualizado con las últimas tendencias de diseño web y desarrollos tecnológicos para mejorar continuamente mis habilidades.",
+      "showcase": "Realicé actualizaciones en el frontend utilizando React, consumiendo datos de una API GraphQL.",
       "position": "Desarrollador Frontend"
     },
     "cars": {
       "description": "Como desarrollador frontend en cars.com, mis actividades incluyen crear y mantener componentes web para mejorar la interfaz de usuario utilizando PHP, y optimizar el rendimiento del sitio web utilizando Lit, una biblioteca de componentes web. También me aseguro de que el sitio web sea visualmente atractivo y fácil de usar para los clientes. Además, colaboro con el equipo de ingeniería para implementar medidas de aseguramiento de calidad y mantener la base de código del sitio web para garantizar su escalabilidad y mantenibilidad.",
+      "showcase": "Mantuve y desarrollé el frontend para la parte administrativa del sitio utilizando LitElement y JavaScript puro. Ocasionalmente realicé tareas de backend y pruebas con PHP.",
       "position": "Desarrollador Frontend"
     },
     "aaf": {
       "description": "Sitio web dedicado a procesos de unión y acabado de metal como soldadura, conformado, y recubrimiento de metales para diversas aplicaciones. Aprende sobre diferentes tipos de metalurgia y los métodos utilizados para unir y cortar metales. Descubre noticias, productos, tendencias de la industria y conéctate con profesionales y entusiastas en el campo.",
+      "showcase": "Desarrollé un sitio web para un negocio de soldadura utilizando Laravel y Vue, encargándome del desarrollo tanto del frontend como del backend, además del despliegue a producción. Actualmente estoy trabajando en la versión 2 del sitio, creada completamente con Nuxt y Vue, la cual está siendo validada para su despliegue en producción en NuxtHub.",
       "position": "Desarrollador FullStack"
     },
     "birdsual": {
       "description": "Esta cartera web de un diseñador gráfico fue creada con Nuxt 3 y Mongo. Ofrece una visualización atractiva y fácil de usar de las mejores piezas del portafolio, así como una experiencia de usuario intuitiva para los visitantes. Además, esta plataforma también presenta un backend sólido y seguro para un rendimiento óptimo y un mantenimiento fácil.",
+      "showcase": "Desarrollé un sitio web de portafolio para un diseñador gráfico utilizando Nuxt y Vue, encargándome del desarrollo tanto del frontend como del backend, además del despliegue a producción.",
       "position": "Desarrollador FullStack"
     },
     "aac": {
       "description": "Un sitio web que utiliza Nuxt 2 y Mongo para crear muebles sostenibles, contemporáneos para interiores y exteriores. Descubre piezas diseñadas de manera artística que se integran perfectamente en tus espacios de vida. Explora nuestra galería y coloca un pedido en línea para obtener muebles elegantes pero duraderos.",
+      "showcase": "Desarrollé un sitio web para un negocio de carpintería con sede en Las Vegas utilizando Nuxt y Vue, encargándome del desarrollo tanto del frontend como del backend, además del despliegue a producción.",
       "position": "Desarrollador FullStack"
     },
     "quivi": {
       "description": "Esta plataforma de comercio electrónico para una tienda de autopartes mexicana fue creada con Django Rest y Nuxt 2, ofreciendo una interfaz fácil de usar para que los clientes compren autopartes de alta calidad de las mejores marcas con opciones de pago seguras y un procesamiento de pedidos eficiente.",
+      "showcase": "Desarrollé un sitio web de comercio electrónico adaptado a las necesidades específicas del vendedor, asegurando una integración fluida del inventario de la tienda física con la tienda en línea. La primera versión fue creada con Django Rest para el backend y Nuxt para el frontend, mientras que la segunda versión fue rediseñada completamente con Nuxt.",
       "position": "Desarrollador FullStack"
     },
     "members": {
       "description": "Este sistema integrado CRUD, construído con Laravel, Vue y MySQL, facilita a los entrenadores la gestión sencilla de datos y el almacenamiento seguro. La interfaz intuitiva permite actualizaciones en tiempo real para el soporte personalizado al cliente.",
+      "showcase": "Desarrollé un sistema de registro de usuarios para una agencia de autobuses con un panel administrativo para gestionar a todos los usuarios registrados. El proyecto fue creado utilizando Laravel para el backend y Vue para el frontend.",
       "position": "Desarrollador FullStack"
     },
     "mayeling": {
       "description": "Descubre nuestra empresa de construcción en México a través de nuestro sitio web impulsado por Laravel, Vue y MySQL. Consulta nuestro portafolio y soluciones confiables de construcción. La navegación fácil de usar te permitirá conocer más sobre nuestro equipo y experimentar la calidad de nuestro trabajo.",
+      "showcase": "Desarrollé un sitio web para una empresa de construcción en México utilizando Laravel y PHP, encargándome del desarrollo tanto del backend como del frontend para mostrar servicios y proyectos de manera efectiva.",
       "position": "Desarrollador FullStack"
+    },
+    "artefino": {
+      "description": "Desarrollé un sitio web para un artista en México para exhibir y vender sus pinturas, integrando Mercado Libre para ventas en línea de manera fluida. El proyecto fue creado utilizando Laravel y PHP.",
+      "showcase": "Desarrollé un sitio web para un artista en México para exhibir y vender sus pinturas, integrando Mercado Libre para ventas en línea de manera fluida. El proyecto fue creado utilizando Laravel y PHP.",
+      "position": "FullStack Developer"
     }
   }
 }

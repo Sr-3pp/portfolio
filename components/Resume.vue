@@ -19,7 +19,7 @@
 
             ul.cv-tech-list
                 li.cv-tech-item(v-for="(tech, e) in job.technologies" :key="e")
-                    SrPicture(:src="'/img/logos/'+tech.logo" :alt="tech.name")
+                    NuxtImg(:src="'/img/logos/'+tech.logo" :alt="tech.name")
     hr
     SrText(text="Freelance" class="title")
     ol.cv-list
@@ -32,7 +32,7 @@
 
             ul.cv-tech-list
                 li.cv-tech-item(v-for="(tech, e) in job.technologies" :key="e")
-                    SrPicture(:src="'/img/logos/'+tech.logo" :alt="tech.name")
+                    NuxtImg(:src="'/img/logos/'+tech.logo" :alt="tech.name")
 
 </template>
 
