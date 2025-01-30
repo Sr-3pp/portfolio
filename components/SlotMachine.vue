@@ -18,8 +18,8 @@ const slots: Ref<any[]> = ref(Array.from({ length }, () => ({
 
 const speed = ref(10);
 const labelIdx = ref(0);
-const interval = ref(null);
-const intervalSpeed = 3000;
+const interval: any = ref(null);
+const intervalSpeed = 4000;
 
 const spin = async (duration: number = 800) => {
   const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -38,7 +38,7 @@ const spin = async (duration: number = 800) => {
       
       if (elapsedTime >= duration) {
         slots.value.forEach((slot: any, i) => {
-          const char = Array.from(props.labels[labelIdx.value])[i];
+          const char = Array.from(props.labels[labelIdx.value] as string)[i];
           loop(slot, delayTime, char);
         })
         setTimeout(() => {
@@ -59,7 +59,8 @@ onMounted(() => {
   }, intervalSpeed);
 });
 
-const loop = (slot: any, delay = 500, char?) => {
+const loop = (slot: any, delay = 500, char?: null | string
+) => {
   slotMachine.value!.style.setProperty('--transition-speed', `${delay}ms`);
   slotMachine.value!.style.setProperty('--slot-transform', `translateY(0)`);
   setTimeout(() => {

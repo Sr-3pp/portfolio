@@ -173,8 +173,10 @@ const small = computed(() => {
       align-items: center;
     }
 
-    .grid-column {
-      padding: 0
+    @media (min-width: $breakpoint-sm) {
+      .grid-column {
+        padding: 0
+      }
     }
   }
 
@@ -185,11 +187,9 @@ const small = computed(() => {
       margin-bottom: unit(20);
     }
 
-    &.kind {
-      &-title,
-      &-subtitle {
-        text-shadow: rgba($color-black, 0.8) 0 0 unit(16);
-      }
+    &.title,
+    &.subtitle {
+      text-shadow: rgba($color-black, 0.8) 0 0 unit(16);
     }
   }
 
@@ -217,7 +217,7 @@ const small = computed(() => {
     gap: unit(20);
     justify-content: center;
     margin-top: unit(10);
-    margin-bottom: unit(10);
+    margin-bottom: unit(20);
   }
 }
 </style>

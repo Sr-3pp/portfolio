@@ -30,10 +30,6 @@ export default defineNuxtConfig({
     }
   },
 
-  generate: {
-    routes: ["/"],
-  },
-
   modules: ["@vueuse/nuxt", "@nuxtjs/robots", [
     "nuxt-mail",
     {
@@ -87,10 +83,6 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
-    prerender: {
-      crawlLinks: false,
-      routes: ["/_ipx/_/img/3pp.webp"],
-    },
     routeRules: {
       "/img/**": {
         headers: {
