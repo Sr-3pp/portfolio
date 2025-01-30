@@ -87,6 +87,10 @@
           {
             "name": "JavaScript",
             "logo": "js.webp"
+          },
+          {
+            "name": "JQuery",
+            "logo": "jquery.png"
           }
         ]
       },
@@ -116,6 +120,10 @@
           {
             "name": "PHP",
             "logo": "php.webp"
+          },
+          {
+            "name": "JQuery",
+            "logo": "jquery.png"
           }
         ]
       },
@@ -207,6 +215,10 @@
           {
             "name": "TypeScript",
             "logo": "typescript.webp"
+          },
+          {
+            "name": "JQuery",
+            "logo": "jquery.png"
           }
         ]
       }

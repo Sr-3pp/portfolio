@@ -91,8 +91,7 @@ const projectDetails = (project: any) => {
   SrModal.projects-project-detail(ref="projectModal")
     template(#close)
       SrIcon(name="close")
-    template(#body)
-      .sr-modal-body(v-if="currentProject")
+    template(#body v-if="currentProject")
         SrGrid
           SrGridColumn(:size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
             NuxtImg.projects-project-detail-thumb(:src="`${currentProject.thumb || `/img/logos/${currentProject.logo}`}`" :alt="currentProject.name" width="200" height="200")

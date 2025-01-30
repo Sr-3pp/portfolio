@@ -59,8 +59,7 @@ Footer(:socialItems="social")
 }
 
 .resume {
-  &.sr-modal {
-    padding: unit(20);
+  &.dialog {
 
     .text {
       &.title {
@@ -75,17 +74,18 @@ Footer(:socialItems="social")
       }
     }
   }
-  .sr-modal {
+
+  .dialog {
     &-header {
-      margin-top: unit(20);
       padding: unit(20);
+      padding-top: unit(40)!important;
       border-bottom: {
         style: solid;
         width: unit(1);
         color: $color-vue-bg;
       }
 
-      .sr-icon {
+      .icon {
         width: unit(14);
         height: unit(14);
 
@@ -104,17 +104,7 @@ Footer(:socialItems="social")
     &-body {
       max-height: 60lvh;
     }
-    &-close {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      .sr-icon {
-        width: unit(20);
-        height: unit(20);
-        flex-shrink: 0;
-      }
-    }
+   
   }
 
   .print-button {
@@ -128,7 +118,7 @@ Footer(:socialItems="social")
     border-bottom-left-radius: unit(8);
     border-bottom-right-radius: unit(8);
 
-    .sr-icon {
+    .icon {
       width: unit(20);
       height: unit(20);
     }

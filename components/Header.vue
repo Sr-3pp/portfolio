@@ -17,12 +17,9 @@ const small = computed(() => {
                 Character(:small="small")
             SrGridColumn(:size="{mobile: '1', sm: '3/5',md: '1/2'}" class="column justify-center info")
                 Typewriter(text="Martin Ruiz" class="title")
-                ClientOnly
-                  SlotMachine(:labels="[$t('vue_expert'), $t('bug_hunter')]")
                 div.highlights
-                  SrText(:text="$t('vue_expert')" :editable="true" class="subtitle" style="--text-align: center;")
-                  SrText(text="|" class="subtitle" style="--text-align: center;")
-                  SrText(:text="$t('bug_hunter')" class="subtitle" style="--text-align: center;")
+                  ClientOnly
+                    SlotMachine(:labels="[$t('vue_expert'), $t('bug_hunter')]")
                 ul.action-box
                   li
                     SrLink(icon="vue" label="View Certificate" href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")

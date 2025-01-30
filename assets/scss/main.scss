@@ -100,7 +100,7 @@ ol {
       }
     }
 
-    .sr-modal {
+    .dialog {
       &-container {
         padding: 0;
       }
@@ -128,7 +128,7 @@ ol {
         display: flex;
         gap: unit(8);
 
-        .sr-icon {
+        .icon {
           width: unit(25);
           height: unit(25);
           margin-right: unit(4);

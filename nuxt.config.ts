@@ -68,14 +68,8 @@ export default defineNuxtConfig({
 
   css: [
     "~/assets/scss/main.scss",
-    "~/assets/scss/components/sr-modal.scss",
     "~/assets/scss/components/sr-text.scss",
   ],
-
-  components: {
-    global: true,
-    dirs: ["~/components"],
-  },
 
   vite: {
     css: {
