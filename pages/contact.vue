@@ -22,9 +22,10 @@ useHead({
     SrText(text="Lets work together" tag="h1" class="title" style="--text-align: center;")
     SrGrid(:style="`--justify-content: center;`")
       SrGridColumn(:size="{mobile: '1', sm: '1/2'}")
-        SrPicture.pixel(src="/img/pixel.webp" :class="{sent: sent}" alt="Pixel")
-          Transition(name="fade")
-            SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
+        figure.pixel
+          NuxtImg(src="/img/pixel.webp" :class="{sent: sent}" alt="Pixel")
+        Transition(name="fade")
+          SrText.contact-form-message(v-if="sent" text="Thanks!\n I will reply as soon as posible." style="--text-align: center;")
       Transition(name="shrink")
         SrGridColumn(v-if="!sent" :size="{mobile: '1', sm: '1/2'}" style="--justify-content: center;")
           ClientOnly
@@ -35,9 +36,10 @@ useHead({
 .contact {
   display: flex;
   min-height: var(--section-min-height, 80vh);
-  .sr-text {
+  .text {
     &.title {
-      margin-bottom: unit(30);
+      text-align: center;
+      margin-bottom: unit(50);
     }
   }
 
@@ -47,9 +49,11 @@ useHead({
     align-items: center;
   }
 
-  .pixel.sr-picture {
+  .pixel {
     overflow: visible;
     margin: auto;
+    position: relative;
+    width: 100%;
 
     &::before {
       content: "";
@@ -79,6 +83,7 @@ useHead({
       }
     }
     img {
+      width: 100%;
       opacity: 1;
       position: relative;
       z-index: 1;
@@ -107,7 +112,7 @@ useHead({
     }
   }
 
-  .sr-grid {
+  .grid {
     transition: all 0.5s ease;
 
     flex-direction: column-reverse;

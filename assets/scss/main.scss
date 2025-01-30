@@ -87,20 +87,20 @@ ol {
       display: none;
     }
 
-    .sr-text {
+    .text {
       &.title {
-        .sr-text-container {
+        .text-container {
           font-size: unit(22) !important;
         }
       }
       &.subtitle {
-        .sr-text-container {
+        .text-container {
           font-size: unit(18) !important;
         }
       }
     }
 
-    .sr-modal {
+    .dialog {
       &-container {
         padding: 0;
       }
@@ -128,7 +128,7 @@ ol {
         display: flex;
         gap: unit(8);
 
-        .sr-icon {
+        .icon {
           width: unit(25);
           height: unit(25);
           margin-right: unit(4);
@@ -148,7 +148,7 @@ ol {
       &-label {
         display: flex;
 
-        .sr-picture {
+        img{
           width: unit(30);
         }
       }

@@ -13,7 +13,8 @@ defineProps({
 
 <template lang="pug">
 .hobby-card
-  SrPicture.hobby-card-picture(:src="`/img/${thumb}`")
+  figure.picture
+    NuxtImg.hobby-card-picture(:src="`/img/${thumb}`")
   SrText.hobby-card-title(:text="$t(description)" style="--text-align: center;")
 </template>
 
@@ -25,7 +26,25 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
+  .picture {
+    width: 100%;
+    height: 100%;
+    border-radius: unit(9999);
+    overflow: hidden;
+    aspect-ratio: 1;
+    background-color: $color-vue-bg;
+    border: {
+      style: solid;
+      width: unit(5);
+      color: $color-vue;
+    }
 
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   &-title {
     position: absolute;
     top: 50%;

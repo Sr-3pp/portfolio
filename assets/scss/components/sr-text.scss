@@ -1,18 +1,18 @@
-.sr-text {
-  .sr-text-container {
+.text {
+  .text-container {
     text-align: inherit;
     white-space: pre-line;
     text-wrap: balance;
   }
   &.title {
-    .sr-text-container {
+    .text-container {
       font-size: unit(42) !important;
       font-weight: bold;
     }
   }
 
   &.subtitle {
-    .sr-text-container {
+    .text-container {
       font-size: unit(24) !important;
       font-weight: bold;
     }

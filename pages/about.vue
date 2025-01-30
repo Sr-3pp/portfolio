@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import about from "@/content/about.json";
-const { hobbies } = about;
 
 useHead({
   htmlAttrs: {
@@ -15,22 +13,25 @@ useHead({
     },
   ],
 });
+
+
+const about: any = inject("about");
+const { hobbies } = about;
 </script>
 
 <template lang="pug">
 .about 
   SrContainer(:with-padding="true")
     SrText(text="Who am I?" tag="h1" class="title" style="--text-align: center; --text-align-sm: left;")
-    SrGrid
-      SrGridColumn(:size="{mobile: '1', sm: '2/3'}")
-        SrText(:html="$t('full_cover_letter')")
-      SrGridColumn(:size="{mobile: '1', sm: '1/3'}" style="--align-items: center; --justify-content: center;")
-        SrPicture.selfie(src="/img/me.webp" alt="Martin Ruiz" width="300" height="300")
+    figure.selfie.picture
+      NuxtImg(src="/img/me.webp" alt="Martin Ruiz" width="250")
+    SrText(:text="$t('full_cover_letter')" :html="true")
   SrContainer(:with-padding="true")
     SrText(:text="$t('why_vue')" class="title" tag="h2" style="--text-align: center;")
     SrGrid.why
       SrGridColumn(:size="{mobile: '1', sm: '1/3'}")
-        SrPicture(src="/img/logos/vue.webp" alt="Martin Ruiz" width="300" height="300")
+        figure.picture
+          NuxtImg(src="/img/logos/vue.webp" alt="Martin Ruiz" width="250")
       SrGridColumn(:size="{mobile: '1', sm: '2/3'}" style="--align-items: center; --justify-content: center;")
         SrText(:text="$t('why_vue_answer')")
   SrContainer(:with-padding="true")
@@ -42,9 +43,20 @@ useHead({
 
 <style lang="scss">
 .about {
-  .sr-text {
+  .text {
     &.title {
       margin-bottom: unit(20);
+    }
+  }
+
+  .picture{
+    margin: 0;
+    width: 100%;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -53,19 +65,27 @@ useHead({
     margin: 0 auto;
   }
 
-  .selfie.sr-picture {
-    height: unit(400);
+  .selfie.picture {
+    float: right;
     border-radius: unit(9999);
     overflow: hidden;
+    width: 100%;
+    margin: unit(20);
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: 50% 50%;
     }
+
+    @media (min-width: $breakpoint-sm) {
+      height: unit(400);
+      width: 30%;
+      min-width: unit(300);
+    }
   }
 
-  .sr-grid {
+  .grid {
     > * {
       &:has(.selfie) {
         display: none;

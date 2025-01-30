@@ -21,7 +21,7 @@
   background: $bg-linear-vue-dark;
   color: $color-vue-text;
 
-  .sr-text {
+  .text {
     font-weight: 700;
     --text-align: center;
   }

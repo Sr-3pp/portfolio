@@ -23,48 +23,59 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   runtimeConfig: {
-    mailConfig: {
-      to: process.env.MAIL_CONTACT,
-    },
+    public: {
+      mailConfig: {
+        to: process.env.MAIL_CONTACT,
+      },
+    }
   },
 
   generate: {
     routes: ["/"],
   },
 
-  modules: [
-    "sr-content-2",
-    "@vueuse/nuxt",
-    "@nuxtjs/robots",
-    [
-      "nuxt-mail",
+  modules: ["@vueuse/nuxt", "@nuxtjs/robots", [
+    "nuxt-mail",
+    {
+      message: {
+        to: process.env.MAIL_CONTACT,
+      },
+      smtp: mailConfig,
+    },
+  ], "@nuxt/image", "@nuxt/content", "@nuxtjs/i18n"],
+
+  i18n: {
+    defaultLocale: "en",  
+    compilation: {
+      strictMessage: false,
+    },
+    locales: [
       {
-        message: {
-          to: process.env.MAIL_CONTACT,
-        },
-        smtp: mailConfig,
+        code: 'en',
+        name: 'English',
+        iso: 'en-US',
+        file: 'en.json',
+      },
+      {
+        code: 'es',
+        name: 'Español',
+        iso: 'es-MX',
+        file: 'es.json',
       },
     ],
-  ],
+    lazy: true,
+  },
 
   css: [
     "~/assets/scss/main.scss",
-    "~/assets/scss/components/sr-modal.scss",
     "~/assets/scss/components/sr-text.scss",
   ],
-
-  components: {
-    global: true,
-    dirs: ["~/components"],
-  },
 
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
           additionalData: `
-            @use "sr-content-2/assets/scss/utilities/index.scss" as *;
-            @use "sr-content-2/assets/scss/main.scss" as *;
             @use "~/assets/scss/functions/unit.scss" as *;
             @use "~/assets/scss/tokens.scss" as *;
             @use "~/assets/scss/transitions.scss" as *;
@@ -78,6 +89,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     prerender: {
       crawlLinks: false,
+      routes: ["/_ipx/_/img/3pp.webp"],
     },
     routeRules: {
       "/img/**": {

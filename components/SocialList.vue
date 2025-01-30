@@ -43,7 +43,7 @@ const getUrl = (key: string, value: string) => {
       margin-right: unit(20);
     }
 
-    .sr-icon {
+    .icon {
       width: unit(30);
       height: unit(30);
       margin-right: unit(4);

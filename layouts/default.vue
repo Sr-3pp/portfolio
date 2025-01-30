@@ -1,32 +1,34 @@
 <script setup lang="ts">
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 import { Analytics } from '@vercel/analytics/nuxt'
-import { cv } from "@/content/cv/index.json";
-import { social } from "@/content/about.json";
 const resumeModal = ref();
 
-const nuxtApp = useNuxtApp();
-const loading = ref(false);
-nuxtApp.hook("page:start", () => {
-  loading.value = true;
-});
-nuxtApp.hook("page:finish", () => {
-  loading.value = false;
-});
+const { data } = await useAsyncData('home',() => {
+  const cv = queryContent('_cv').findOne();
+  const about = queryContent('about').findOne();
+
+  return Promise.all([cv, about]);
+})
+
+const [cv, about]: any = data.value;
+
+const { social } = about;
 
 const printResume = () => {
   window.print();
 };
+
+provide('cv', cv);
+provide('about', about)
+
 </script>
 
 <template lang="pug">
 SpeedInsights
 Analytics
 Header(@resume="resumeModal.toggle()")
-Transition(name="fade")
-  Loader(v-if="loading")
-  .main(v-else)
-    NuxtPage
+.main()
+  NuxtPage
 
 SrModal.resume.printable(ref="resumeModal")
   template(#close)
@@ -57,33 +59,33 @@ Footer(:socialItems="social")
 }
 
 .resume {
-  &.sr-modal {
-    padding: unit(20);
+  &.dialog {
 
-    .sr-text {
+    .text {
       &.title {
-        .sr-text-container {
+        .text-container {
           font-size: unit(22) !important;
         }
       }
       &.subtitle {
-        .sr-text-container {
+        .text-container {
           font-size: unit(18) !important;
         }
       }
     }
   }
-  .sr-modal {
+
+  .dialog {
     &-header {
-      margin-top: unit(20);
       padding: unit(20);
+      padding-top: unit(40)!important;
       border-bottom: {
         style: solid;
         width: unit(1);
         color: $color-vue-bg;
       }
 
-      .sr-icon {
+      .icon {
         width: unit(14);
         height: unit(14);
 
@@ -102,17 +104,7 @@ Footer(:socialItems="social")
     &-body {
       max-height: 60lvh;
     }
-    &-close {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      .sr-icon {
-        width: unit(20);
-        height: unit(20);
-        flex-shrink: 0;
-      }
-    }
+   
   }
 
   .print-button {
@@ -126,7 +118,7 @@ Footer(:socialItems="social")
     border-bottom-left-radius: unit(8);
     border-bottom-right-radius: unit(8);
 
-    .sr-icon {
+    .icon {
       width: unit(20);
       height: unit(20);
     }

@@ -1,5 +1,5 @@
-{
-  "hobbies": [
+---
+hobbies: [
     {
       "name": "Programming",
       "thumb": "programming.webp",
@@ -20,8 +20,9 @@
       "thumb": "juggling.webp",
       "description": "hobbies.juggling"
     }
-  ],
-  "social": [
+]
+
+social: [
     {
       "name": "Github",
       "link": "https://github.com/Sr-3pp"
@@ -43,4 +44,4 @@
       "link": "https://www.linkedin.com/in/sr3pp/"
     }
   ]
-}
+---

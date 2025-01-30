@@ -2,26 +2,24 @@
 const route = useRoute();
 
 const emit = defineEmits(["resume", "toggleSize"]);
-const scrolled = ref(false);
 
 const small = computed(() => {
-  return route.name !== "index" ? true : scrolled.value;
+  return !(route.name as string).includes('index') ? true : false;
 });
 </script>
 
 <template lang="pug">
 .header(:class="{small: small}")
-    SrContainer(:with-padding="true")
+    SrContainer(:with-padding="!small")
         SrGrid
             SrGridColumn(:size="{mobile: '1', sm: '2/5', md: '1/2'}" class="items-center justify-center")
               NuxtLink(to="/" style="width: 100%")
-                Character(:small=" small")
+                Character(:small="small")
             SrGridColumn(:size="{mobile: '1', sm: '3/5',md: '1/2'}" class="column justify-center info")
                 Typewriter(text="Martin Ruiz" class="title")
                 div.highlights
-                  SrText(:text="`💻 ${$t('vue_expert')}`" class="subtitle" style="--text-align: center;")
-                  SrText(text="|" class="subtitle" style="--text-align: center;")
-                  SrText(:text="`🐞 ${$t('bug_hunter')}`" class="subtitle" style="--text-align: center;")
+                  ClientOnly
+                    SlotMachine(:labels="[$t('vue_expert'), $t('bug_hunter')]")
                 ul.action-box
                   li
                     SrLink(icon="vue" label="View Certificate" href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")
@@ -41,7 +39,7 @@ const small = computed(() => {
 .header {
   overflow: hidden;
   position: relative;
-  z-index: 3;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,13 +93,13 @@ const small = computed(() => {
 
     .character {
       &-picture {
-        --image-position: 50% #{unit(110)};
+        --image-position: 0 #{unit(60)};
 
         @media (min-width: $breakpoint-sm) {
-          --image-position: 50% #{unit(50)};
+          --image-position: 0 #{unit(-40)};
         }
         @media (min-width: $breakpoint-md) {
-          --image-position: 50% #{unit(110)};
+          --image-position: 0 #{unit(-110)};
         }
         &::before {
           animation: none;
@@ -109,7 +107,7 @@ const small = computed(() => {
           opacity: 0.3;
         }
       }
-      .sr-text {
+      .text {
         top: 50%;
       }
     }
@@ -126,8 +124,6 @@ const small = computed(() => {
     .action-box {
       flex-direction: row;
       justify-content: space-around;
-      padding-left: unit(20);
-      padding-right: unit(20);
 
       background-color: rgba($color-vue-active, 0.8);
       position: fixed;
@@ -143,6 +139,8 @@ const small = computed(() => {
         width: 100%;
         background-color: transparent;
         position: static;
+        margin-bottom: auto;
+        margin-top: unit(35);
       }
     }
   }
@@ -157,16 +155,16 @@ const small = computed(() => {
     }
   }
 
-  .sr-container {
+  .container {
     position: relative;
     z-index: 1;
   }
 
-  ul.sr-grid {
+  ul.grid {
     flex-grow: 0;
   }
 
-  .sr-grid {
+  .grid {
     .justify-center {
       justify-content: center;
     }
@@ -174,9 +172,13 @@ const small = computed(() => {
     .items-center {
       align-items: center;
     }
+
+    .grid-column {
+      padding: 0
+    }
   }
 
-  .sr-text {
+  .text {
     color: $color-white;
 
     &:not(:last-child) {
@@ -187,25 +189,6 @@ const small = computed(() => {
       &-title,
       &-subtitle {
         text-shadow: rgba($color-black, 0.8) 0 0 unit(16);
-      }
-    }
-  }
-
-  .tech-item {
-    color: $color-black;
-    width: unit(100);
-    height: unit(100);
-    margin: unit(8);
-
-    .sr-picture {
-      margin-right: auto;
-      margin-left: auto;
-      margin-bottom: unit(10);
-      width: unit(50);
-      height: unit(50);
-
-      img {
-        object-fit: contain;
       }
     }
   }
