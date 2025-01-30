@@ -23,13 +23,16 @@ footer.footer
 
   .social-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: unit(20);
     margin-bottom: unit(20);
+    margin-right: unit(40);
+    margin-left: unit(40);
 
     a {
       color: $color-white;
       text-decoration: none;
-      padding: unit(20) unit(10);
       &:hover {
         text-decoration: underline;
       }
