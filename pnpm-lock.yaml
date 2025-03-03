@@ -48,12 +48,21 @@ importers:
       '@types/node':
         specifier: ^22.10.5
         version: 22.12.0
+      '@types/nodemailer':
+        specifier: ^6.4.17
+        version: 6.4.17
       '@vueuse/core':
         specifier: ^12.4.0
         version: 12.5.0(typescript@5.7.3)
       '@vueuse/nuxt':
         specifier: ^12.4.0
         version: 12.5.0(magicast@0.3.5)(nuxt@3.15.4(@parcel/watcher@2.5.1)(@types/node@22.12.0)(db0@0.2.3)(eslint@9.19.0(jiti@2.4.2))(ioredis@5.4.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.1)(sass@1.83.4)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@2.4.2)(sass@1.83.4)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0))(rollup@4.32.1)(typescript@5.7.3)
+      nodemailer:
+        specifier: ^6.10.0
+        version: 6.10.0
+      nuxt-nodemailer:
+        specifier: ^1.1.2
+        version: 1.1.2(magicast@0.3.5)(nodemailer@6.10.0)(rollup@4.32.1)
       pug:
         specifier: ^3.0.3
         version: 3.0.3
@@ -590,8 +599,8 @@ packages:
     resolution: {integrity: sha512-8tR1xe7ZEbkabTuE/tNhzpolygUn9OaYp9yuYAF4MgDNZg06C3Qny80bes2/e9/Wm3aVkPUlCw6WgU7mQd0yEg==}
     engines: {node: '>= 16'}
 
-  '@intlify/shared@11.0.1':
-    resolution: {integrity: sha512-lH164+aDDptHZ3dBDbIhRa1dOPQUp+83iugpc+1upTOWCnwyC1PVis6rSWNMMJ8VQxvtHQB9JMib48K55y0PvQ==}
+  '@intlify/shared@11.1.1':
+    resolution: {integrity: sha512-2kGiWoXaeV8HZlhU/Nml12oTbhv7j2ufsJ5vQaa0VTjzUmZVdd/nmKFRAOJ/FtjO90Qba5AnZDwsrY7ZND5udA==}
     engines: {node: '>= 16'}
 
   '@intlify/unplugin-vue-i18n@6.0.3':
@@ -1108,6 +1117,9 @@ packages:
 
   '@types/node@22.12.0':
     resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
+
+  '@types/nodemailer@6.4.17':
+    resolution: {integrity: sha512-I9CCaIp6DTldEg7vyUTZi8+9Vo0hi1/T8gv3C89yk1rSAAzoKQ8H8ki/jBYJSFoH/BisgLP8tkZMlQ91CIquww==}
 
   '@types/parse-path@7.0.3':
     resolution: {integrity: sha512-LriObC2+KYZD3FzCrgWGv/qufdUy4eXrxcLgQMfYXgPbLIecKIsVBaQgUPmxSSLcjmYbDTQbMgr6qr6l/eb7Bg==}
@@ -3133,6 +3145,11 @@ packages:
     resolution: {integrity: sha512-U9KU2QaNPyeRejXB319uxYeftUIdpTIYX6wXM1E+OMKSRWtHnYLRdIVFWA9qTfWMOK5GpZyFAnJeIaj6v1Z8Wg==}
     engines: {node: '>=18'}
 
+  nuxt-nodemailer@1.1.2:
+    resolution: {integrity: sha512-oYi0AnEZu56euRxJ/G7NAQLmRct9ORgKvxF3AcAbVlxfKJJQ7kNPZnlymQbzg9F/SLBlQgSE+mSQR/3Wz6JOIg==}
+    peerDependencies:
+      nodemailer: ^6.9.13
+
   nuxt-push-plugins@2.1.34:
     resolution: {integrity: sha512-2ylZ99FVU1ITxz/Y/gPXOi3sKFAPOP+IPdPSe5d+EhuTK0EAo9vt9pkn9Fdp8XsycTtqVyXcAT/FLds3MLDphA==}
     engines: {node: '>=14'}
@@ -5101,14 +5118,14 @@ snapshots:
 
   '@intlify/shared@11.0.0-rc.1': {}
 
-  '@intlify/shared@11.0.1': {}
+  '@intlify/shared@11.1.1': {}
 
   '@intlify/unplugin-vue-i18n@6.0.3(@vue/compiler-dom@3.5.13)(eslint@9.19.0(jiti@2.4.2))(rollup@4.32.1)(typescript@5.7.3)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.19.0(jiti@2.4.2))
       '@intlify/bundle-utils': 10.0.0(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))
-      '@intlify/shared': 11.0.1
-      '@intlify/vue-i18n-extensions': 8.0.0(@intlify/shared@11.0.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
+      '@intlify/shared': 11.1.1
+      '@intlify/vue-i18n-extensions': 8.0.0(@intlify/shared@11.1.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
       '@rollup/pluginutils': 5.1.4(rollup@4.32.1)
       '@typescript-eslint/scope-manager': 8.22.0
       '@typescript-eslint/typescript-estree': 8.22.0(typescript@5.7.3)
@@ -5132,11 +5149,11 @@ snapshots:
 
   '@intlify/utils@0.13.0': {}
 
-  '@intlify/vue-i18n-extensions@8.0.0(@intlify/shared@11.0.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))':
+  '@intlify/vue-i18n-extensions@8.0.0(@intlify/shared@11.1.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@babel/parser': 7.26.7
     optionalDependencies:
-      '@intlify/shared': 11.0.1
+      '@intlify/shared': 11.1.1
       '@vue/compiler-dom': 3.5.13
       vue: 3.5.13(typescript@5.7.3)
       vue-i18n: 10.0.5(vue@3.5.13(typescript@5.7.3))
@@ -5940,6 +5957,10 @@ snapshots:
   '@types/node@22.12.0':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/nodemailer@6.4.17':
+    dependencies:
+      '@types/node': 22.12.0
 
   '@types/parse-path@7.0.3': {}
 
@@ -8392,6 +8413,15 @@ snapshots:
       nuxt-alias-path: 2.0.0
       nuxt-push-plugins: 2.1.34(magicast@0.3.5)(rollup@4.32.1)
       parse-packagejson-name: 1.0.1
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+
+  nuxt-nodemailer@1.1.2(magicast@0.3.5)(nodemailer@6.10.0)(rollup@4.32.1):
+    dependencies:
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.32.1)
+      nodemailer: 6.10.0
     transitivePeerDependencies:
       - magicast
       - rollup
