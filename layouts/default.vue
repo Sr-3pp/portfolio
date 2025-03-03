@@ -2,6 +2,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 import { Analytics } from '@vercel/analytics/nuxt'
 const resumeModal = ref();
+const certModal = ref();
 
 const { data } = await useAsyncData('home',() => {
   const cv = queryContent('_cv').findOne();
@@ -26,9 +27,17 @@ provide('about', about)
 <template lang="pug">
 SpeedInsights
 Analytics
-Header(@resume="resumeModal.toggle()")
+Header(@resume="resumeModal.toggle()" @certificates="certModal.toggle()")
 .main()
   NuxtPage
+
+SrModal.certificates(ref="certModal")
+  template(#close)
+    SrIcon(name="close")
+  template(#header)
+    h2 Certificates
+  template(#body)
+    Certificates
 
 SrModal.resume.printable(ref="resumeModal")
   template(#close)

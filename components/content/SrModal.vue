@@ -67,6 +67,8 @@ defineExpose({
       background-color: var(--bg);
       max-width: 80vw;
       max-height: 80vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .dialog-header {

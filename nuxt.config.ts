@@ -27,6 +27,36 @@ export default defineNuxtConfig({
       mailConfig: {
         to: process.env.MAIL_CONTACT,
       },
+      mailtrap: {
+        host: "smtp.mailtrap.io",
+        port: 587,
+        auth: {
+          user: process.env.TRAP_USER,
+          pass: process.env.TRAP_PASS,
+        },
+      },
+      apps: [
+        {
+          name: 'alton-alvarez-construction',
+          token: process.env.AAC_TOKEN,
+          to: process.env.AAC_TO,
+          smtp: process.env.AAC_SMTP,
+          port: process.env.AAC_PORT,
+          secure: process.env.AAC_SECURE,
+          user: process.env.AAC_USER,
+          pass: process.env.AAC_PASS,
+        },
+        {
+          name: 'all-american-finishing',
+          token: process.env.AAF_TOKEN,
+          to: process.env.AAF_TO,
+          smtp: process.env.AAF_SMTP,
+          port: process.env.AAF_PORT,
+          secure: process.env.AAF_SECURE,
+          user: process.env.AAF_USER,
+          pass: process.env.AAF_PASS,
+        }
+      ]
     }
   },
 
@@ -38,7 +68,7 @@ export default defineNuxtConfig({
       },
       smtp: mailConfig,
     },
-  ], "@nuxt/image", "@nuxt/content", "@nuxtjs/i18n"],
+  ], "@nuxt/image", "@nuxt/content", "@nuxtjs/i18n", "nuxt-nodemailer"],
 
   i18n: {
     defaultLocale: "en",  

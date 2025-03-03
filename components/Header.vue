@@ -22,7 +22,7 @@ const small = computed(() => {
                     SlotMachine(:labels="[$t('vue_expert'), $t('bug_hunter')]")
                 ul.action-box
                   li
-                    SrLink(icon="vue" label="View Certificate" href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")
+                    SrButton(icon="cert" label="Certificates" @click="$emit('certificates')")
                   li
                     SrLink(icon="projects" label="My Work" href="/projects")
                   li  
@@ -133,6 +133,7 @@ const small = computed(() => {
       overflow-x: auto;
       flex-wrap: nowrap;
       z-index: 2;
+
       @media (min-width: $breakpoint-sm) {
         flex-wrap: wrap;
         max-width: initial;
@@ -204,6 +205,7 @@ const small = computed(() => {
     .sr-link,
     .cta {
       max-width: inherit;
+      width: 100%;
     }
 
     @media (min-width: $breakpoint-sm) {
