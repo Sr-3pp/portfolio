@@ -14,7 +14,7 @@ const { data } = await useAsyncData('home',() => {
 const [_cv, _about]: any = data.value;
 
 const cv = _cv.body;
-const about = _about.body;
+const about = _about.meta;
 
 const { social } = about;
 
