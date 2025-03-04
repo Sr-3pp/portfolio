@@ -1,21 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data: _certs } = await useAsyncData('certs', () => {
+  return queryCollection('content').path('/certs').first()
+})
+
+const certs = _certs.value.meta.certificates;
+</script>
 
 <template lang="pug">
 .certificates
   ul.certificates__list
-    li.certificates__item
-      a(href="https://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36ahttps://certificates.dev/c/9b634cb0-c51e-4c5d-9b31-192abb29d36a" target="_blank")
-        NuxtImg(src="https://certificates.dev/.netlify/images?url=https:%2F%2Fapi.certificates.dev%2Fcertificates%2Fthumbnail%2F9b634cb0-c51e-4c5d-9b31-192abb29d36a.jpg")
+    li.certificates__item(v-for="cert in certs" :key="cert.name")
+      a(:href="cert.href" target="_blank")
+        NuxtImg(:src="cert.img")
         span
-          SrIcon(name="vue")
-          | Mid Level Vue
-    li.certificates__item
-      a(href="https://certificates.dev/c/9e56a404-2c1e-4dfd-a74d-55b47271742a" target="_blank")
-        NuxtImg(src="https://certificates.dev/.netlify/images?url=https:%2F%2Fapi.certificates.dev%2Fcertificates%2Fthumbnail%2F9e56a404-2c1e-4dfd-a74d-55b47271742a.jpg")
-        span
-          SrIcon(name="vue")
-          | Senior Vue
-
+          SrIcon(:name="cert.icon")
+          | {{ cert.name }} 
 </template>
 
 <style scoped lang="scss">

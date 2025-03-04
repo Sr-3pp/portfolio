@@ -5,13 +5,16 @@ const resumeModal = ref();
 const certModal = ref();
 
 const { data } = await useAsyncData('home',() => {
-  const cv = queryContent('_cv').findOne();
-  const about = queryContent('about').findOne();
+  const cv = queryCollection('content').path('/_cv').first();
+  const about = queryCollection('content').path('/about').first();
 
   return Promise.all([cv, about]);
 })
 
-const [cv, about]: any = data.value;
+const [_cv, _about]: any = data.value;
+
+const cv = _cv.body;
+const about = _about.body;
 
 const { social } = about;
 
@@ -46,17 +49,17 @@ SrModal.resume.printable(ref="resumeModal")
     ClientOnly
       button.print-button(@click="printResume()")
         SrIcon(name="print")
-    .cv-label
-      SrText(:text="cv.name" class="title")
-      small {{ cv.birth }} 
-    div.cv-subtitle-container
-      SrText(:text="$t(cv.position)")
-      a.social-container(:href="'mailto:' + cv.social.mail")
-        SrIcon(name="email")
-        SrText(:text="cv.social.email")
-      a.social-container(:href="cv.social.web")
-        SrIcon(name="web")
-        SrText(:text="cv.social.web")
+      .cv-label
+        SrText(:text="cv.name" class="title")
+        small {{ cv.birth }} 
+      div.cv-subtitle-container
+        SrText(:text="$t(cv.position)")
+        a.social-container(:href="'mailto:' + cv.social.mail")
+          SrIcon(name="email")
+          SrText(:text="cv.social.email")
+        a.social-container(:href="cv.social.web")
+          SrIcon(name="web")
+          SrText(:text="cv.social.web")
   template(#body)
     Resume(:cv="cv")
 Footer(:socialItems="social")

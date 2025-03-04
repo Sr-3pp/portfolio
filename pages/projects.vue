@@ -16,12 +16,12 @@ useHead({
   ],
 });
 
-const { data: projectsData } = await useAsyncData("projects", () => queryContent("projects").findOne());
+const { data: projectsData } = await useAsyncData("projects", () => queryCollection('content').path('/projects').first());
 const cv: any = inject("cv");
 
-const fulltime = ref(projectsData.value!.fulltime);
-const freelance = ref(projectsData.value!.freelance);
-const contractors = ref(projectsData.value!.contractors);
+const fulltime = ref(projectsData.value!.meta.fulltime);
+const freelance = ref(projectsData.value!.meta.freelance);
+const contractors = ref(projectsData.value!.meta.contractors);
 
 const getNameLabel = (cv: any) => `${cv.name} <small>${cv.birth}</small>`;
 const freelanceProjects = [

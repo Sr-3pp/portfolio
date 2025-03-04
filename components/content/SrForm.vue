@@ -1,4 +1,5 @@
 <script setup>
+const SrFormInput = resolveComponent('SrFormInput');
 const props = defineProps({
   form: {
     type: Array,
@@ -9,6 +10,21 @@ const props = defineProps({
     default: 'Submit'
   }
 })
+
+
+const buildFormComponents = (fieldset) => {
+  fieldset.forEach(field => {
+    field.component =  SrFormInput
+  });
+}
+
+props.form.forEach(fieldset => {
+ buildFormComponents(fieldset.fields); 
+});
+
+const getComponent = (name) => {
+  return resolveComponent(name)
+}
 
 const emit = defineEmits(['submit'])
 
