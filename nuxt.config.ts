@@ -35,6 +35,7 @@ export default defineNuxtConfig({
           pass: process.env.TRAP_PASS,
         },
       },
+      mailHelperJWTSecret: process.env.MAIL_HELPER_JWT_SECRET, 
       apps: [
         {
           name: 'alton-alvarez-construction',

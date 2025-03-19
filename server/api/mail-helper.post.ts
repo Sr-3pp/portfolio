@@ -1,42 +1,58 @@
 import nodemailer from 'nodemailer';
+import jwt from 'jsonwebtoken';
+
 const { public: config } = useRuntimeConfig();
 
 export default defineEventHandler(async (event) => {
   const data = await readBody(event);
-  const token = await getCookie(event, 'token');
+  
+  const token = await getHeader(event, 'sr_token');
 
   if (!token) return new Response('Unauthorized', { status: 401 });
-  
-  const getApp = () => (config.apps as []).find((app: {name: string, token: string}) => app.token === token);
 
-  const app = getApp();
-
-  if (!app) return new Response('Unauthorized', { status: 401 });
-
-  const { 
-    user: mailUser,
-    pass: mailPass,
-    to,
-    smtp: mailSmtp,
-    port: mailPort,
-    secure: mailSecure 
-  } = app;
-
-  const { from, subject, message } = data;
-
-  const mailOptions = {
-    to: process.env.NODE_ENV === 'production' ? to : 'test@mail.com',
-    subject,
-    text: `${from} says: \n${message}`,
+  const payload = jwt.verify(token, config.mailHelperJWTSecret as string) as {
+    name: string;
+    email: string;
+    subject: string;
+    config: {
+      from: string,
+      to: string,
+      host: string,
+      port: number,
+      secure: boolean,
+      user: string,
+      pass: string,
+    }
   };
 
+  const mailOptions = {
+    from: payload.config.from,
+    to: process.env.NODE_ENV === 'production' ? payload.config.to : 'test@mail.com',
+    subject: data.subject,
+    text: `${payload.email} says: \n${data.message}`,
+    attachments: [],
+  } as {
+    from: string;
+    to: string;
+    subject: string;
+    text: string;
+    attachments: { filename: string; content: Buffer }[];
+  };
+
+  data.attachments.forEach((attachment: { filename: string, data: Buffer }) => {
+    mailOptions.attachments.push({
+      filename: attachment.filename,
+      content: Buffer.from(attachment.data),
+    });
+  });
+
   const transport = nodemailer.createTransport({
-    host: process.env.NODE_ENV === 'production' ? mailSmtp : config.mailtrap.host,
-    port: process.env.NODE_ENV === 'production' ? mailPort : config.mailtrap.port,
-    secure: process.env.NODE_ENV === 'production' ? mailSecure : false,
+    host: process.env.NODE_ENV === 'production' ? payload.config.host : config.mailtrap.host,
+    port: process.env.NODE_ENV === 'production' ? payload.config.port : config.mailtrap.port,
+    secure: process.env.NODE_ENV === 'production' ? payload.config.secure : false,
     auth: {
-      user: process.env.NODE_ENV === 'production' ? mailUser : config.mailtrap.auth.user,
-      pass: process.env.NODE_ENV === 'production' ? mailPass : config.mailtrap.auth.pass,
+      user: process.env.NODE_ENV === 'production' ? payload.config.user : config.mailtrap.auth.user,
+      pass: process.env.NODE_ENV === 'production' ? payload.config.pass : config.mailtrap.auth.pass,
     },
   });
 
